@@ -1,0 +1,357 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.HomeFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:text="Doctor"
+            android:textColor="#2196F3"
+            android:textSize="22sp" />
+
+
+
+    </RelativeLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linear0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <!--        <RelativeLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="370dp"-->
+        <!--            android:layout_marginTop="16dp"-->
+        <!--            android:layout_marginBottom="-80dp"-->
+        <!--            android:orientation="vertical"-->
+        <!--            android:background="@drawable/doctor1"-->
+        <!--            android:foreground="@color/colorTransparent1"-->
+        <!--            >-->
+
+
+        <!--        </RelativeLayout>   -->
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="-80dp"
+            android:orientation="vertical"
+            android:background="@drawable/doctor1"
+            >
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageView"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="60dp"-->
+        <!--            android:layout_marginTop="-60dp"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:gravity="center"-->
+        <!--            android:adjustViewBounds="true"-->
+        <!--            app:srcCompat="@drawable/ic_ambulance_color"-->
+        <!--            />-->
+
+
+
+
+
+        <!--        android:background="@drawable/rounded_corner29"-->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="12dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:id="@+id/linear1"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corner24"
+                        android:clickable="true"
+
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_corner30"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                app:srcCompat="@drawable/ic_doctor" />
+
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_weight="1"-->
+                            <!--                                android:gravity="center"-->
+                            <!--                                android:text="২৭"-->
+                            <!--                                android:textColor="@color/colorWhite"-->
+                            <!--                                android:textSize="25sp" />-->
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-18dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Doctor List"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/linear2"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corner22"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_corner30"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                app:srcCompat="@drawable/ic_calendar" />
+
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_weight="1"-->
+                            <!--                                android:gravity="center"-->
+                            <!--                                android:text="১২"-->
+                            <!--                                android:textColor="@color/colorWhite"-->
+                            <!--                                android:textSize="25sp" />-->
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="Book a Doctor"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                /////
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:id="@+id/linear3"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corner28"
+                        android:clickable="true"
+
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_corner30"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                app:srcCompat="@drawable/ic_investigations" />
+
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_weight="1"-->
+                            <!--                                android:gravity="center"-->
+                            <!--                                android:text="১২"-->
+                            <!--                                android:textColor="@color/colorWhite"-->
+                            <!--                                android:textSize="25sp" />-->
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="Investigation List"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/linear4"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corner23"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_corner30"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="25sp"
+                                app:srcCompat="@drawable/ic_health_package" />
+
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_weight="1"-->
+                            <!--                                android:gravity="center"-->
+                            <!--                                android:text="7"-->
+                            <!--                                android:textColor="@color/colorWhite"-->
+                            <!--                                android:textSize="25sp" />-->
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="Health Package"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                /////
+
+
+
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginBottom="20dp"-->
+                <!--                    android:orientation="horizontal">-->
+
+
+                <!--                </LinearLayout>-->
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
