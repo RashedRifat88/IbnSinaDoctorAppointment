@@ -1,10 +1,13 @@
 package com.example.ibnsinadoctorappointment.ui.activities
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -12,6 +15,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.ibnsinadoctorappointment.R
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -39,25 +43,40 @@ class MainActivity : AppCompatActivity() {
 //
 //        bottom_nav.setupWithNavController(navController)
 //        nav_view.setupWithNavController(navController)
+
+        setupActionBarWithNavController(navController)
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(androidx.navigation.ui.R.menu.options_menu, menu)
-//        return true
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.options_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 //        return if (item.itemId == androidx.navigation.ui.R.id.termsAndConditions) {
-//            val action = TermConditionFragmentDirections.actionGlobalTermConditionFragment()
+//            val action = NavGraphDirections.actionGlobalTermsFragment()
 //            navController.navigate(action)
 //            true
 //        } else {
 //            item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
 //        }
-//    }
+
+        return if (item.itemId == R.id.callCenterNumber) {
+            val dialIntent = Intent(Intent.ACTION_DIAL)
+            dialIntent.data = Uri.parse("tel:" + "017** ******")
+            startActivity(dialIntent)
+            true
+        } else {
+            item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
+        }
+    }
+
 
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+//        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+        navController.navigateUp()
+        return super.onSupportNavigateUp()
     }
 
 
