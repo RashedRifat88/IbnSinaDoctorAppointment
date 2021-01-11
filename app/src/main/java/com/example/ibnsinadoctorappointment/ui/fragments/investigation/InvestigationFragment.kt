@@ -5,56 +5,54 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.room.ColumnInfo
+import com.egsystem.dailyinvestigations.ui.fragments.investigation.investigation_list.adapters.InvestigationListAdapter
 import com.example.ibnsinadoctorappointment.R
+import com.example.ibnsinadoctorappointment.data.models.Investigation
+import com.example.ibnsinadoctorappointment.ui.viewmodels.InvestigationViewModel
+import kotlinx.android.synthetic.main.fragment_investigation.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [InvestigationFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class InvestigationFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class InvestigationFragment : Fragment(R.layout.fragment_investigation) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private lateinit var investigationList: List<Investigation>
+    private lateinit var investigationViewModel: InvestigationViewModel
+    private lateinit var adapter: InvestigationListAdapter
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        adapter = InvestigationListAdapter()
+        rv_investigation.adapter = adapter
+        rv_investigation.layoutManager = LinearLayoutManager(context)
+
+        //Instantiate and create viewmodel observers
+        viewModels()
+
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_investigation, container, false)
-    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment InvestigationFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            InvestigationFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun viewModels() {
+        investigationViewModel = ViewModelProvider(this).get(InvestigationViewModel::class.java)
+
+        investigationViewModel.getAllInvestigations.observe(viewLifecycleOwner, Observer {
+            adapter.setData(it)
+            investigationList = it
+
+            if (it.isEmpty()) {
+                rv_investigation.visibility = View.GONE
+                tv_emptyView.visibility = View.VISIBLE
+            } else {
+                rv_investigation.visibility = View.VISIBLE
+                tv_emptyView.visibility = View.GONE
             }
+        })
     }
+
+
+
 }
+
