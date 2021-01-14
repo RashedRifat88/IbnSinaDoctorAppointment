@@ -1,14 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.form_patient.PatientFormFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_doctor_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/cardViewImage"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Doctor Name"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                android:textColor="#ffffff"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_doctor_deg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fullname_field"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/cardViewImage"
+                android:fontFamily="@font/roboto_bold"
+                android:includeFontPadding="false"
+                android:text="Doctor Designation"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                android:textColor="@color/grey_100"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/filledTextField1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Patient Name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_pat_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/filledTextField2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Patient Mobile">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_pat_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/daily_weekly_button_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <RadioButton
+                        android:id="@+id/radio1"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:minHeight="40dp"
+                        android:background="@drawable/radio_flat_selector"
+                        android:button="@android:color/transparent"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="3dp"
+                        android:text="Man"
+                        android:textColor="@color/radio_flat_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/radio2"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:minHeight="40dp"
+                        android:background="@drawable/radio_flat_selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="3dp"
+                        android:text="Woman"
+                        android:textColor="@color/radio_flat_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/radio3"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:minHeight="40dp"
+                        android:background="@drawable/radio_flat_selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="3dp"
+                        android:text="Other"
+                        android:textColor="@color/radio_flat_text_selector" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="32dp"
+                android:minHeight="40dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:text="Submit" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

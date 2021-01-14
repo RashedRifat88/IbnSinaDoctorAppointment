@@ -5,13 +5,14 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.TextView
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.ibnsinadoctorappointment.R
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        actionBarLoad()
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -45,6 +47,14 @@ class MainActivity : AppCompatActivity() {
 //        nav_view.setupWithNavController(navController)
 
         setupActionBarWithNavController(navController)
+    }
+
+    private fun actionBarLoad() {
+        val actionBar: android.app.ActionBar? = actionBar
+        actionBar?.setDisplayShowCustomEnabled(true)
+        actionBar?.setCustomView(R.layout.custom_main_actionbar)
+//        (findViewById<View>(R.id.action_bar_title) as TextView).text =
+//            "This is a long text title that will wrap to multiple lines, when necessary."
     }
 
 

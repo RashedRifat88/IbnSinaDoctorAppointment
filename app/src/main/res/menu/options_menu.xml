@@ -3,10 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:menuCategory="secondary"
+        android:title="Call "
+        android:icon="@drawable/ic_call"
+        app:showAsAction="always|withText" />
+
+    <item
         android:id="@+id/callCenterNumber"
         android:menuCategory="secondary"
-        android:title="Call Center \n015** ******"
-        app:showAsAction="always" />
+        android:title="553756\n01700 000000 "
+        app:showAsAction="always|withText" />
 
 <!--    <item-->
 <!--        android:id="@+id/settingsFragment"-->
