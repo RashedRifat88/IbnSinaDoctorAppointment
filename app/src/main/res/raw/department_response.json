@@ -1,0 +1,23 @@
+{
+  "content": [
+    {
+      "id": 25,
+      "name": "Radiology",
+      "enabled": true,
+      "createTime": null
+    },
+    {
+      "id": 26,
+      "name": "Hematology",
+      "enabled": true,
+      "createTime": 1591628493000
+    },
+    {
+      "id": 27,
+      "name": "Dental",
+      "enabled": true,
+      "createTime": 1591682782000
+    }
+  ],
+  "totalElements": 3
+}

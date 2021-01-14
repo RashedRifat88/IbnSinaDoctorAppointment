@@ -1,0 +1,628 @@
+{
+  "content": [
+    {
+      "id": 32,
+      "username": "lokman2222",
+      "nickName": "Lokman",
+      "sex": "Male",
+      "avatar": null,
+      "email": "lokma2222n.edu@gmail.com",
+      "phone": "01977428483",
+      "userType": 2,
+      "designation": "Prof",
+      "avatarPath": "9ff970aca316821f0cf8fde9ce0c1755.jpg",
+      "note": "Good1",
+      "qualification": "Bhalo1",
+      "exChamberNote": "UK1",
+      "appActiveFlag": true,
+      "averageTime": 48,
+      "doctorDept": {
+        "id": 25,
+        "name": "Radiology"
+      },
+      "doctorSpecializations": [
+        {
+          "docspNo": 41,
+          "specialization": {
+            "id": 1,
+            "name": "Kidney"
+          },
+          "activeFlag": null
+        },
+        {
+          "docspNo": 42,
+          "specialization": {
+            "id": 2,
+            "name": "Heart2"
+          },
+          "activeFlag": null
+        }
+      ],
+      "enabled": true,
+      "lastPasswordResetTime": null,
+      "roles": [
+        {
+          "id": 1,
+          "name": "Super administrator",
+          "level": 1,
+          "dataScope": "All"
+        },
+        {
+          "id": 2,
+          "name": "branch appointment user",
+          "level": 2,
+          "dataScope": "customize"
+        }
+      ],
+      "job": {
+        "id": 2,
+        "name": "SuperAdmin"
+      },
+      "dept": {
+        "id": 1,
+        "name": "Headquarters23"
+      },
+      "deptId": null,
+      "branchNo": null,
+      "createTime": 1593173706000
+    },
+    {
+      "id": 36,
+      "username": "mazharmaruf",
+      "nickName": "Lokman 2",
+      "sex": "Male",
+      "avatar": null,
+      "email": "mimaruf@gmail.com",
+      "phone": "01977428483",
+      "userType": 2,
+      "designation": "Prof",
+      "avatarPath": "39ddd058bcaac7658282f26b3c0ca642.jpg",
+      "note": "Good",
+      "qualification": "Bhalo",
+      "exChamberNote": "UK",
+      "appActiveFlag": true,
+      "averageTime": 24,
+      "doctorDept": {
+        "id": 25,
+        "name": "Radiology"
+      },
+      "doctorSpecializations": [
+        {
+          "docspNo": 19,
+          "specialization": {
+            "id": 1,
+            "name": "Kidney"
+          },
+          "activeFlag": null
+        },
+        {
+          "docspNo": 20,
+          "specialization": {
+            "id": 2,
+            "name": "Heart2"
+          },
+          "activeFlag": null
+        }
+      ],
+      "enabled": true,
+      "lastPasswordResetTime": null,
+      "roles": [
+        {
+          "id": 1,
+          "name": "Super administrator",
+          "level": 1,
+          "dataScope": "All"
+        },
+        {
+          "id": 2,
+          "name": "branch appointment user",
+          "level": 2,
+          "dataScope": "customize"
+        }
+      ],
+      "job": {
+        "id": 16,
+        "name": "user3"
+      },
+      "dept": {
+        "id": 5,
+        "name": "Ordinary person2"
+      },
+      "deptId": null,
+      "branchNo": null,
+      "createTime": 1593344977000
+    },
+    {
+      "id": 37,
+      "username": "abubakar2",
+      "nickName": "1Abu Bakar",
+      "sex": "Male",
+      "avatar": null,
+      "email": "2abubak1a2r@gmail.com",
+      "phone": "20197742848322",
+      "userType": 2,
+      "designation": "1Prof",
+      "avatarPath": "69b8470c9ec794ff1905f7be0d60a0e6.jpg",
+      "note": "2Good2",
+      "qualification": "2Bhalo2",
+      "exChamberNote": "UK2",
+      "appActiveFlag": true,
+      "averageTime": 9,
+      "doctorDept": {
+        "id": 27,
+        "name": "Dental"
+      },
+      "doctorSpecializations": [
+        {
+          "docspNo": 35,
+          "specialization": {
+            "id": 3,
+            "name": "Eye"
+          },
+          "activeFlag": null
+        }
+      ],
+      "enabled": true,
+      "lastPasswordResetTime": null,
+      "roles": [
+        {
+          "id": 1,
+          "name": "Super administrator",
+          "level": 1,
+          "dataScope": "All"
+        },
+        {
+          "id": 2,
+          "name": "branch appointment user",
+          "level": 2,
+          "dataScope": "customize"
+        }
+      ],
+      "job": {
+        "id": 17,
+        "name": "test1"
+      },
+      "dept": {
+        "id": 1,
+        "name": "Headquarters23"
+      },
+      "deptId": null,
+      "branchNo": null,
+      "createTime": 1593515879000
+    },
+    {
+      "id": 38,
+      "username": "mesbah",
+      "nickName": "Mesbah",
+      "sex": "Male",
+      "avatar": null,
+      "email": "mezbah@yahoo.com",
+      "phone": "01977000000",
+      "userType": 2,
+      "designation": "Prof",
+      "avatarPath": "176d572ccb55e6147e89d0969d2a4d94.jpg",
+      "note": "Best3",
+      "qualification": "Best1",
+      "exChamberNote": "Best2",
+      "appActiveFlag": true,
+      "averageTime": 50,
+      "doctorDept": {
+        "id": 25,
+        "name": "Radiology"
+      },
+      "doctorSpecializations": [],
+      "enabled": true,
+      "lastPasswordResetTime": null,
+      "roles": [
+        {
+          "id": 1,
+          "name": "Super administrator",
+          "level": 1,
+          "dataScope": "All"
+        },
+        {
+          "id": 2,
+          "name": "branch appointment user",
+          "level": 2,
+          "dataScope": "customize"
+        },
+        {
+          "id": 3,
+          "name": "Branch Admin",
+          "level": 3,
+          "dataScope": "customize"
+        }
+      ],
+      "job": {
+        "id": 2,
+        "name": "SuperAdmin"
+      },
+      "dept": {
+        "id": 5,
+        "name": "Ordinary person2"
+      },
+      "deptId": null,
+      "branchNo": null,
+      "createTime": 1593530544000
+    },
+    {
+      "id": 39,
+      "username": "rafiq2",
+      "nickName": "Rafiq",
+      "sex": "Female",
+      "avatar": null,
+      "email": "ga2lib@gmail.com",
+      "phone": "017777777",
+      "userType": 2,
+      "designation": "Prof",
+      "avatarPath": "1a0ce265c13a427d5cba1cf13e0cfb00.JPG",
+      "note": "Qualification",
+      "qualification": "Qualification",
+      "exChamberNote": "Qualification",
+      "appActiveFlag": false,
+      "averageTime": 45,
+      "doctorDept": {
+        "id": 26,
+        "name": "Hematology"
+      },
+      "doctorSpecializations": [
+        {
+          "docspNo": 22,
+          "specialization": {
+            "id": 3,
+            "name": "Eye"
+          },
+          "activeFlag": null
+        }
+      ],
+      "enabled": true,
+      "lastPasswordResetTime": null,
+      "roles": [
+        {
+          "id": 2,
+          "name": "branch appointment user",
+          "level": 2,
+          "dataScope": "customize"
+        }
+      ],
+      "job": {
+        "id": 11,
+        "name": "admin2"
+      },
+      "dept": {
+        "id": 24,
+        "name": "Division Two"
+      },
+      "deptId": null,
+      "branchNo": null,
+      "createTime": 1593533745000
+    },
+    {
+      "id": 41,
+      "username": "dmrokon41",
+      "nickName": "Riti Noor Aknan",
+      "sex": "Female",
+      "avatar": null,
+      "email": "qwqwqq5wwntis@53.com",
+      "phone": "+6582007603",
+      "userType": 2,
+      "designation": "Prof",
+      "avatarPath": null,
+      "note": "6565",
+      "qualification": "56565",
+      "exChamberNote": "656565",
+      "appActiveFlag": true,
+      "averageTime": 16,
+      "doctorDept": {
+        "id": 25,
+        "name": "Radiology"
+      },
+      "doctorSpecializations": [
+        {
+          "docspNo": 36,
+          "specialization": {
+            "id": 2,
+            "name": "Heart2"
+          },
+          "activeFlag": null
+        }
+      ],
+      "enabled": true,
+      "lastPasswordResetTime": null,
+      "roles": [
+        {
+          "id": 2,
+          "name": "branch appointment user",
+          "level": 2,
+          "dataScope": "customize"
+        }
+      ],
+      "job": {
+        "id": 10,
+        "name": "admin"
+      },
+      "dept": {
+        "id": 1,
+        "name": "Headquarters23"
+      },
+      "deptId": null,
+      "branchNo": null,
+      "createTime": 1593619629000
+    },
+    {
+      "id": 42,
+      "username": "shohel",
+      "nickName": "Shohel",
+      "sex": "Male",
+      "avatar": null,
+      "email": "edu@gmail.com",
+      "phone": "01977428483",
+      "userType": 2,
+      "designation": "Prof",
+      "avatarPath": "b7a09f668d8e205188739ca3a32eaccc.jpg",
+      "note": "",
+      "qualification": "Bhalo",
+      "exChamberNote": "",
+      "appActiveFlag": true,
+      "averageTime": 10,
+      "doctorDept": {
+        "id": 25,
+        "name": "Radiology"
+      },
+      "doctorSpecializations": [
+        {
+          "docspNo": 37,
+          "specialization": {
+            "id": 1,
+            "name": "Kidney"
+          },
+          "activeFlag": null
+        },
+        {
+          "docspNo": 38,
+          "specialization": {
+            "id": 2,
+            "name": "Heart2"
+          },
+          "activeFlag": null
+        }
+      ],
+      "enabled": true,
+      "lastPasswordResetTime": null,
+      "roles": [
+        {
+          "id": 2,
+          "name": "branch appointment user",
+          "level": 2,
+          "dataScope": "customize"
+        }
+      ],
+      "job": {
+        "id": 2,
+        "name": "SuperAdmin"
+      },
+      "dept": {
+        "id": 1,
+        "name": "Headquarters23"
+      },
+      "deptId": null,
+      "branchNo": null,
+      "createTime": 1604733663000
+    },
+    {
+      "id": 43,
+      "username": "talhaibn",
+      "nickName": "Talha Ibn Zubayer",
+      "sex": "Male",
+      "avatar": null,
+      "email": "talha@yahoo.com",
+      "phone": "01861125888",
+      "userType": 2,
+      "designation": "Prof",
+      "avatarPath": null,
+      "note": "Bhalo doctor",
+      "qualification": "MBBS, Ph, Govt.",
+      "exChamberNote": "No external Chamber",
+      "appActiveFlag": true,
+      "averageTime": 10,
+      "doctorDept": {
+        "id": 26,
+        "name": "Hematology"
+      },
+      "doctorSpecializations": [
+        {
+          "docspNo": 39,
+          "specialization": {
+            "id": 2,
+            "name": "Heart2"
+          },
+          "activeFlag": null
+        },
+        {
+          "docspNo": 40,
+          "specialization": {
+            "id": 3,
+            "name": "Eye"
+          },
+          "activeFlag": null
+        }
+      ],
+      "enabled": true,
+      "lastPasswordResetTime": null,
+      "roles": [
+        {
+          "id": 2,
+          "name": "branch appointment user",
+          "level": 2,
+          "dataScope": "customize"
+        }
+      ],
+      "job": {
+        "id": 2,
+        "name": "SuperAdmin"
+      },
+      "dept": {
+        "id": 1,
+        "name": "Headquarters23"
+      },
+      "deptId": null,
+      "branchNo": null,
+      "createTime": 1605164104000
+    },
+    {
+      "id": 44,
+      "username": "khurshid",
+      "nickName": "Brig. Gen. (R.) MS Khurshid Alam",
+      "sex": "Male",
+      "avatar": null,
+      "email": "khurshid@gmail.com",
+      "phone": "+88 09610010615",
+      "userType": 2,
+      "designation": "Professor",
+      "avatarPath": "ecbfe0093a4e9443b814eafa70f56992.jpg",
+      "note": "Bhalo",
+      "qualification": "Qualifications:MBBS, DLO (Viena), FCPS, MAMS (Viena)\r\nSpecialty: ENT &amp; Head Neck Surgery\r\nLanguage Spoken: English, Bangla\r\nDesignation: Professor &amp; Head of the Dept.\r\nInstitute: Northern International Medical College",
+      "exChamberNote": "No chamber",
+      "appActiveFlag": true,
+      "averageTime": 15,
+      "doctorDept": {
+        "id": 26,
+        "name": "Hematology"
+      },
+      "doctorSpecializations": [],
+      "enabled": true,
+      "lastPasswordResetTime": null,
+      "roles": [
+        {
+          "id": 2,
+          "name": "branch appointment user",
+          "level": 2,
+          "dataScope": "customize"
+        }
+      ],
+      "job": {
+        "id": 10,
+        "name": "admin"
+      },
+      "dept": {
+        "id": 1,
+        "name": "Headquarters23"
+      },
+      "deptId": null,
+      "branchNo": null,
+      "createTime": 1605240462000
+    },
+    {
+      "id": 45,
+      "username": "tauhidur",
+      "nickName": "Tauhidur Rahman",
+      "sex": "Male",
+      "avatar": null,
+      "email": "doctor@yahoo.com",
+      "phone": "0187777777",
+      "userType": 2,
+      "designation": "Prof",
+      "avatarPath": "a03b904b3c6f68b97e6ec08963897f28.jpg",
+      "note": "Bhalo",
+      "qualification": "MBBS, FCPS, JAPAN",
+      "exChamberNote": "Popular bosen",
+      "appActiveFlag": true,
+      "averageTime": 30,
+      "doctorDept": {
+        "id": 26,
+        "name": "Hematology"
+      },
+      "doctorSpecializations": [
+        {
+          "docspNo": 43,
+          "specialization": {
+            "id": 1,
+            "name": "Kidney"
+          },
+          "activeFlag": null
+        },
+        {
+          "docspNo": 44,
+          "specialization": {
+            "id": 2,
+            "name": "Heart2"
+          },
+          "activeFlag": null
+        },
+        {
+          "docspNo": 45,
+          "specialization": {
+            "id": 3,
+            "name": "Eye"
+          },
+          "activeFlag": null
+        }
+      ],
+      "enabled": true,
+      "lastPasswordResetTime": null,
+      "roles": [
+        {
+          "id": 2,
+          "name": "branch appointment user",
+          "level": 2,
+          "dataScope": "customize"
+        }
+      ],
+      "job": {
+        "id": 10,
+        "name": "admin"
+      },
+      "dept": {
+        "id": 2,
+        "name": "Administrator Department2"
+      },
+      "deptId": null,
+      "branchNo": null,
+      "createTime": 1609159723000
+    },
+    {
+      "id": 46,
+      "username": "Habibur",
+      "nickName": "Dr Habibur Rahman",
+      "sex": "Male",
+      "avatar": null,
+      "email": "habibur@gmail.com",
+      "phone": "01775372763",
+      "userType": 2,
+      "designation": "Prof",
+      "avatarPath": null,
+      "note": "",
+      "qualification": "mbbs fcps",
+      "exChamberNote": "",
+      "appActiveFlag": true,
+      "averageTime": 30,
+      "doctorDept": {
+        "id": 26,
+        "name": "Hematology"
+      },
+      "doctorSpecializations": [],
+      "enabled": true,
+      "lastPasswordResetTime": null,
+      "roles": [
+        {
+          "id": 2,
+          "name": "branch appointment user",
+          "level": 2,
+          "dataScope": "customize"
+        }
+      ],
+      "job": {
+        "id": 10,
+        "name": "admin"
+      },
+      "dept": {
+        "id": 1,
+        "name": "Headquarters23"
+      },
+      "deptId": null,
+      "branchNo": null,
+      "createTime": 1609233832000
+    }
+  ],
+  "totalElements": 11
+}
