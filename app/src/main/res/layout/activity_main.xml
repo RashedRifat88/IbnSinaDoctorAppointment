@@ -11,33 +11,96 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-<!--        <androidx.appcompat.widget.Toolbar-->
-<!--            android:id="@+id/toolbar"-->
+
+<!--        ///-->
+
+<!--        <com.google.android.material.appbar.AppBarLayout-->
+<!--            android:id="@+id/appBarLayout"-->
+<!--            android:layout_alignParentTop="true"-->
 <!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_height="?actionBarSize"-->
 <!--            android:background="@color/colorPrimary"-->
-<!--            app:navigationIcon="@drawable/ic_drawer_barger"-->
-<!--            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-<!--            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
+<!--            android:gravity="center"-->
+<!--            android:theme="@style/AppTheme.AppBarOverlay"-->
+<!--            app:elevation="5dp"-->
+<!--            tools:ignore="MissingConstraints">-->
+
+<!--            <androidx.appcompat.widget.Toolbar-->
+<!--                android:id="@+id/toolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:popupTheme="@style/AppTheme.PopupOverlay">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        &lt;!&ndash;                    <ImageView&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        android:id="@+id/img_back"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        android:background="?android:attr/selectableItemBackgroundBorderless"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        android:src="@drawable/ic_arrow_back" />&ndash;&gt;-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_actiontitle"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_marginLeft="8dp"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center|left"-->
+<!--                            android:padding="1dp"-->
+<!--                            android:text="@string/app_name"-->
+<!--                            android:textColor="@color/white"-->
+<!--                            android:textSize="18dp"-->
+<!--                            android:textStyle="bold" />-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+<!--            </androidx.appcompat.widget.Toolbar>-->
+
+<!--        </com.google.android.material.appbar.AppBarLayout>-->
+<!--        ///-->
 
 
-<!--        <androidx.appcompat.widget.Toolbar-->
-<!--            android:id="@+id/toolbar"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@color/colorPrimary"-->
-<!--            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-<!--            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
 
-<!--        <androidx.fragment.app.FragmentContainerView-->
-<!--            android:id="@+id/nav_host_fragment"-->
-<!--            android:name="androidx.navigation.fragment.NavHostFragment"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_above="@id/bottom_nav"-->
-<!--            android:layout_below="@id/toolbar"-->
-<!--            app:defaultNavHost="true"-->
-<!--            app:navGraph="@navigation/main_nav" />-->
+
+<!--        &lt;!&ndash;        <androidx.appcompat.widget.Toolbar&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/toolbar"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:background="@color/colorPrimary"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:navigationIcon="@drawable/ic_drawer_barger"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;        <androidx.appcompat.widget.Toolbar&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/toolbar"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:background="@color/colorPrimary"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <androidx.fragment.app.FragmentContainerView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/nav_host_fragment"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:name="androidx.navigation.fragment.NavHostFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_above="@id/bottom_nav"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_below="@id/toolbar"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:defaultNavHost="true"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:navGraph="@navigation/main_nav" />&ndash;&gt;-->
 
 
 

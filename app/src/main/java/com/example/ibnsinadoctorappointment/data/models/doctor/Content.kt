@@ -1,0 +1,30 @@
+package com.example.ibnsinadoctorappointment.data.models.doctor
+
+data class Content(
+    val appActiveFlag: Any,
+    val avatar: Any,
+    val avatarPath: String,
+    val averageTime: Int,
+    val branchNo: Int,
+    val createTime: Any,
+    val dept: Dept,
+    val deptId: Any,
+    val designation: String,
+    val doctorDept: DoctorDept,
+    val doctorSpecializations: List<Any>,
+    val email: String,
+    val enabled: Boolean,
+    val exChamberNote: String,
+    val id: Int,
+    val job: Job,
+    val lastPasswordResetTime: Any,
+    val nickName: String,
+    val note: String,
+    val phone: String,
+    val qualification: String,
+    val roles: List<Role>,
+    val sex: String,
+    val speciality: String,
+    val userType: Int,
+    val username: String
+)

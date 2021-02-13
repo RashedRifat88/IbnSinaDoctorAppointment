@@ -18,7 +18,7 @@ class DoctorViewModel(application: Application) : AndroidViewModel(application) 
 
 
     init {
-        val DoctorDao= MyDatabase.getDatabase(application).doctorDao()
+        val DoctorDao = MyDatabase.getDatabase(application).doctorDao()
         repository = DoctorRepository(DoctorDao)
 
         getAllDoctors = repository.getAllDoctors
@@ -48,17 +48,17 @@ class DoctorViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
-    fun searchByName(name : String) : LiveData<List<Doctor>> {
+    fun searchByName(name: String): LiveData<List<Doctor>> {
         return repository.searchByName(name)
     }
 
 
-    fun searchByBranch(name : String) : LiveData<List<Doctor>> {
+    fun searchByBranch(name: String): LiveData<List<Doctor>> {
         return repository.searchByBranch(name)
     }
 
 
-    fun searchByDept(name : String) : LiveData<List<Doctor>> {
+    fun searchByDept(name: String): LiveData<List<Doctor>> {
         return repository.searchByDept(name)
     }
 

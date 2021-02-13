@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorPrimary"
-    tools:context=".ui.fragments.book_doctor.BookDoctorFragment">
+    tools:context=".ui.fragments.doctor_list.DoctorListFragment">
 
 
     <LinearLayout
@@ -28,24 +28,24 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:layout_marginRight="51dp"
-            android:layout_marginLeft="51dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
             android:orientation="horizontal">
 
 
-                <EditText
-                    android:id="@+id/et_search"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="34dp"
-                    android:layout_margin="0dp"
-                    android:fontFamily="@font/roboto_regular"
-                    android:hint="search text type here"
-                    android:textColorHint="@color/white"
-                    android:textColor="@color/white"
-                    android:background="@drawable/rounded_corner2"
-                    android:textSize="15sp"
-                    android:inputType="text"/>
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="34dp"
+                android:layout_margin="0dp"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="search text type here"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_corner3"
+                android:textSize="15sp"
+                android:inputType="text"/>
 
         </LinearLayout>
         /////
@@ -56,87 +56,123 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginEnd="15dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="horizontal">
 
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/spinRelative1"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:background="@drawable/box1"
+                    android:paddingLeft="0dp"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/spinner_branch_book"
+                        android:layout_width="match_parent"
+                        android:layout_height="34dp"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@android:color/transparent"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right"
+                        android:tint="#ffffff"
+                        android:src="@drawable/drop2"
+                        tools:ignore="UseAppTint" />
+                </RelativeLayout>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
+                android:layout_marginLeft="8dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tv_search_by_branch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="4dp"
-                    android:padding="5dp"
-                    android:background="@drawable/rounded_corner2"
-                    android:clickable="true"
-                    android:fontFamily="@font/roboto_bold"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:gravity="center"
-                    android:text="Search by \nbranch"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
+
+                <RelativeLayout
+                    android:id="@+id/spinRelative2"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:background="@drawable/box1"
+                    android:paddingLeft="0dp"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/spinner_dept_book"
+                        android:layout_width="match_parent"
+                        android:layout_height="34dp"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@android:color/transparent"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right"
+                        android:tint="#ffffff"
+                        android:src="@drawable/drop2"
+                        tools:ignore="UseAppTint" />
+                </RelativeLayout>
+
+
             </LinearLayout>
 
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
+                android:layout_weight=".9"
+                android:gravity="right"
+                android:layout_marginLeft="4dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tv_search_by_dept"
+                    android:id="@+id/tv_refresh_search"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minHeight="34dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
-                    android:padding="5dp"
-                    android:background="@drawable/rounded_corner2"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/rounded_corner3"
                     android:clickable="true"
                     android:fontFamily="@font/roboto_bold"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:gravity="center"
-                    android:text="Search by \ndepartment"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_search_by_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="4dp"
-                    android:padding="5dp"
-                    android:background="@drawable/rounded_corner2"
-                    android:clickable="true"
-                    android:fontFamily="@font/roboto_bold"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:gravity="center"
-                    android:text="Search by \nname"
+                    android:text="Refresh"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
             </LinearLayout>

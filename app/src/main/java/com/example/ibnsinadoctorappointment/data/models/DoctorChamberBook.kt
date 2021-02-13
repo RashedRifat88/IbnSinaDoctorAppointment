@@ -155,9 +155,7 @@ data class DoctorChamberBook (
 //    @ColumnInfo(name = "column_appSl")
 //    var appSl : String,
 //
-//
-//    @ColumnInfo(name = "column_avatarPath")
-//    var avatarPath : String,
+
 //
 //
 //    @ColumnInfo(name = "column_phone")
@@ -166,6 +164,11 @@ data class DoctorChamberBook (
 //
     @ColumnInfo(name = "column_nickName")
     var nickName : String,
+
+
+    @ColumnInfo(name = "column_avatarPath")
+    var avatarPath : String,
+
 //
 //
     @ColumnInfo(name = "column_qualification")

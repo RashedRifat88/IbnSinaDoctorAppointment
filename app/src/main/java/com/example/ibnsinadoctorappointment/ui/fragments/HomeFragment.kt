@@ -33,8 +33,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         loadAnimations()
 
-        deleteDoctorData()
-        loadDoctorData()
+//        deleteDoctorData()
+//        loadDoctorData()
     }
 
 
@@ -43,28 +43,28 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         doctorViewModel.deleteAllDoctors()
     }
 
-    private fun loadDoctorData() {
-        doctorViewModel = ViewModelProvider(this).get(DoctorViewModel::class.java)
-
-        val jsonText = resources.openRawResource(R.raw.doctor_response)
-            .bufferedReader().use { it.readText() }
-
-        val obj = JSONObject(jsonText)
-        val itemArray = obj.getJSONArray("content")
-        for (i in 0 until itemArray.length()) {
-            val itemDetail = itemArray.getJSONObject(i)
-            Log.d("tagRifat33333", "name is: " + itemDetail.getString("nickName"))
-            val doctor = Doctor(
-                itemDetail.getInt("id"),
-                itemDetail.getString("nickName"),
-                itemDetail.getString("qualification"),
-                itemDetail.getString("designation")
-            )
-            doctorViewModel.addDoctor(doctor)
-        }
-
-        Log.d("tagRifat1234", "json is: " + jsonText)
-    }
+//    private fun loadDoctorData() {
+//        doctorViewModel = ViewModelProvider(this).get(DoctorViewModel::class.java)
+//
+//        val jsonText = resources.openRawResource(R.raw.doctor_response)
+//            .bufferedReader().use { it.readText() }
+//
+//        val obj = JSONObject(jsonText)
+//        val itemArray = obj.getJSONArray("content")
+//        for (i in 0 until itemArray.length()) {
+//            val itemDetail = itemArray.getJSONObject(i)
+//            Log.d("tagRifat33333", "name is: " + itemDetail.getString("nickName"))
+//            val doctor = Doctor(
+//                itemDetail.getInt("id"),
+//                itemDetail.getString("nickName"),
+//                itemDetail.getString("qualification"),
+//                itemDetail.getString("designation")
+//            )
+//            doctorViewModel.addDoctor(doctor)
+//        }
+//
+//        Log.d("tagRifat1234", "json is: " + jsonText)
+//    }
 
 
 
@@ -97,6 +97,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val btt2 = AnimationUtils.loadAnimation(context, R.anim.btt2);
         val btt3 = AnimationUtils.loadAnimation(context, R.anim.btt3);
         val btt4 = AnimationUtils.loadAnimation(context, R.anim.btt4);
+        val btt5 = AnimationUtils.loadAnimation(context, R.anim.btt5);
+        val btt6 = AnimationUtils.loadAnimation(context, R.anim.btt6);
 
 //        iv_logo.startAnimation(ttb)
 
@@ -104,6 +106,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         linear2.startAnimation(btt2)
         linear3.startAnimation(btt3)
         linear4.startAnimation(btt4)
+        linear5.startAnimation(btt5)
+        linear6.startAnimation(btt6)
 
     }
 

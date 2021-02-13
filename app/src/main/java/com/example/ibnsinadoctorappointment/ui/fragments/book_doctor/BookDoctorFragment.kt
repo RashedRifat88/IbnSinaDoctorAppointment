@@ -4,6 +4,8 @@ import android.app.Activity
 import android.content.Context
 import android.content.Context.INPUT_METHOD_SERVICE
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -41,41 +43,41 @@ class BookDoctorFragment : Fragment(R.layout.fragment_book_doctor) {
     }
 
     private fun searchByName() {
-        tv_search_by_name.setOnClickListener {
+        tv_refresh_search.setOnClickListener {
             searchDoctorByName(et_search.text.toString())
 
             view?.let { it1 -> context?.hideKeyboard(it1) }
         }
 
-       tv_search_by_branch.setOnClickListener {
-            searchDoctorByBranch(et_search.text.toString())
-
-           view?.let { it1 -> context?.hideKeyboard(it1) }
-        }
-
-       tv_search_by_dept.setOnClickListener {
-            searchDoctorByDept(et_search.text.toString())
-
-           view?.let { it1 -> context?.hideKeyboard(it1) }
-        }
-
-
-
-
-//        et_search.addTextChangedListener(object : TextWatcher {
+//       tv_search_by_branch.setOnClickListener {
+//            searchDoctorByBranch(et_search.text.toString())
 //
-//            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-//                searchDoctorByName(et_search.text.toString())
-//            }
+//           view?.let { it1 -> context?.hideKeyboard(it1) }
+//        }
 //
-//            override fun afterTextChanged(p0: Editable?) {
+//       tv_search_by_dept.setOnClickListener {
+//            searchDoctorByDept(et_search.text.toString())
 //
-//
-//            }
-//
-//            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-//            }
-//        })
+//           view?.let { it1 -> context?.hideKeyboard(it1) }
+//        }
+
+
+
+
+        et_search.addTextChangedListener(object : TextWatcher {
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                searchDoctorByName(et_search.text.toString())
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+
+
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+        })
 
     }
 

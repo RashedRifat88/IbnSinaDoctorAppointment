@@ -49,7 +49,7 @@ class InvestigationListAdapter : RecyclerView.Adapter<InvestigationListAdapter.I
 
         var discount = currentInvestigation.discount_percentage
         if (discount != null){
-            holder.itemView.tv_discount_percentage.text = "${currentInvestigation.discount_percentage}"
+            holder.itemView.tv_discount_percentage.text = "${currentInvestigation.discount_percentage} %"
         }else{
             holder.itemView.tv_discount_percentage.text = "N/A"
         }

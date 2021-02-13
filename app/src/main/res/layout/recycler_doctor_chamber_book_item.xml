@@ -28,21 +28,20 @@
                 android:layout_gravity="center">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_alignParentLeft="true"
                     android:layout_marginTop="0dp"
                     android:padding="1dp"
-                    android:src="@drawable/ic_number_bg" />
+                    android:src="@drawable/doctor_male" />
 
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginTop="0dp"
-                    android:padding="1dp"
-                    android:src="@drawable/ic_doctor" />
+<!--                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:layout_width="60dp"-->
+<!--                    android:layout_height="60dp"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_marginTop="0dp"-->
+<!--                    android:padding="1dp"-->
+<!--                    android:src="@drawable/ic_doctor" />-->
 
             </RelativeLayout>
 
@@ -63,7 +62,7 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="Name"
                     android:textColor="#02467C"
-                    android:textSize="18dp" />
+                    android:textSize="14sp" />
 
 
                 <LinearLayout
@@ -81,21 +80,21 @@
                             android:id="@+id/tv_deg"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/roboto_bold"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
                             android:text="Price"
                             android:textColor="#2196F3"
-                            android:textSize="16dp" />
+                            android:textSize="12sp" />
 
                         <TextView
                             android:id="@+id/tv_branch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
+                            android:layout_gravity="left"
                             android:fontFamily="@font/roboto_regular"
                             android:text="Price"
                             android:textColor="#00BCD4"
-                            android:textSize="15dp" />
+                            android:textSize="10sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -105,7 +104,7 @@
 
 
             <LinearLayout
-                android:layout_weight="2"
+                android:layout_weight="1.8"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"

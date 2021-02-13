@@ -11,7 +11,7 @@
     <item
         android:id="@+id/callCenterNumber"
         android:menuCategory="secondary"
-        android:title="553756\n01700 000000 "
+        android:title="553756              \n01700 000000 "
         app:showAsAction="always|withText" />
 
 <!--    <item-->
