@@ -87,6 +87,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         linear4.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_healthPackageFragment)
         }
+
     }
 
 

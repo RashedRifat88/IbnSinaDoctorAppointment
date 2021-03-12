@@ -119,6 +119,7 @@ dependencies {
 
     //animation lottie
     def lottieVersion = "3.0.0"
+//    def lottieVersion = "3.4.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"      //animation
 
     //circle image
@@ -126,8 +127,12 @@ dependencies {
 
     //
     implementation 'com.google.code.gson:gson:2.8.1'
-    //dialog material
-    implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
+//    //dialog material
+//    implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
+    // material dialogs
+    def matieral_dialogs_version = "0.9.6.0"
+    implementation "com.afollestad.material-dialogs:core:$matieral_dialogs_version"
+
 
 
 }

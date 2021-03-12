@@ -17,5 +17,4 @@ data class Department (
     @ColumnInfo(name = "column_enabled")
     var enabled : Boolean,
 
-
 )

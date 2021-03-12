@@ -1,6 +1,7 @@
 package com.example.ibnsinadoctorappointment.retrofit
 
 import com.example.ibnsinadoctorappointment.data.models.branch.BranchModel
+import com.example.ibnsinadoctorappointment.data.models.chamber_availavle.ChamberAvailableModel
 import com.example.ibnsinadoctorappointment.data.models.department.DepartmentModel
 import com.example.ibnsinadoctorappointment.data.models.doctor.DoctorModel
 import com.example.ibnsinadoctorappointment.data.models.doctor_chamber_book.DoctorChamberBookModel
@@ -9,6 +10,7 @@ import com.example.ibnsinadoctorappointment.data.models.investigation.Investigat
 import com.example.ibnsinadoctorappointment.data.models.last_update.LastUpdateModel
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface APIServices {
 
@@ -39,6 +41,13 @@ interface APIServices {
 
     @GET("branch.json")
     fun getBranches(): Call<BranchModel>
+
+    @GET("index.php")
+    fun checkAvailableChamber(
+        @Query("chamber") chamber: String,
+        @Query("date") date: String
+    ): Call<ChamberAvailableModel>
+
 
 //    @GET("rifat/doctor.json")
 //    fun getAllDoctors(): Call<MutableList<DoctorModel>>

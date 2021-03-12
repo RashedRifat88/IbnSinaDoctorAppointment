@@ -48,6 +48,8 @@ class DoctorViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
+
+
     fun searchByName(name: String): LiveData<List<Doctor>> {
         return repository.searchByName(name)
     }

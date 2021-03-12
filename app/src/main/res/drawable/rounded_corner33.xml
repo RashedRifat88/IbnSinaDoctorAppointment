@@ -8,8 +8,8 @@
 
     <gradient
         android:startColor="#FF5722"
-        android:centerColor="#FB7449"
-        android:endColor="#FB7449"
+        android:centerColor="#FDA184"
+        android:endColor="#F8764C"
         android:angle="45" />
 
     <padding

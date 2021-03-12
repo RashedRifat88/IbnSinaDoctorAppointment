@@ -1,13 +1,19 @@
 package com.example.ibnsinadoctorappointment.ui.activities.Splash
 
+import android.Manifest
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.media.MediaPlayer
 import android.os.Bundle
+import android.telephony.TelephonyManager
 import android.util.Log
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
+import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModelProvider
 import com.example.ibnsinadoctorappointment.R
 import com.example.ibnsinadoctorappointment.data.database.shared_pref.SharedPreference
@@ -29,6 +35,8 @@ import retrofit2.Response
 
 class SplashActivity : AppCompatActivity() {
 
+    private val permission = 101
+    var mMediaPlayer: MediaPlayer? = null
 
     private lateinit var investigationViewModel: InvestigationViewModel
     private lateinit var doctorViewModel: DoctorViewModel
@@ -50,6 +58,8 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+//        startTone()
+
         sharedPreference = SharedPreference(this)
         loadJsonDataIntoDatabase_last_update()
 //        loadJsonDataIntoDatabase()
@@ -67,6 +77,9 @@ class SplashActivity : AppCompatActivity() {
             }
 
             override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
+
+//                stopTone()
+
                 startActivity(Intent(this@SplashActivity, MainActivity::class.java))
                 finish()
             }
@@ -75,7 +88,71 @@ class SplashActivity : AppCompatActivity() {
             }
 
         })
+
+
+//        userPhoneNumber()
     }
+
+    private fun userPhoneNumber() {
+        val telephonyManager = getSystemService(Context.TELEPHONY_SERVICE) as
+                TelephonyManager
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) !=
+            PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED &&
+            ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) !=
+            PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_PHONE_STATE),
+                permission
+            )
+        }
+
+        var userPhone = telephonyManager.line1Number
+        Log.d("tagRifat33333", "userPhone is: " + telephonyManager.line1Number)
+//        Log.d("tagRifat33333", "simSerialNumber is: " + telephonyManager.simSerialNumber)
+//        Log.d("tagRifat33333", "simSerialNumber is: " + telephonyManager.setNetworkSelectionModeAutomatic())
+    }
+
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String?>,
+                                            grantResults: IntArray) {
+        when (requestCode) {
+            permission -> {
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+
+
+//
+//    private fun startTone() {
+//
+//        try {
+//            mMediaPlayer = MediaPlayer.create(this, R.raw.sound_bird1)
+//            mMediaPlayer!!.start()
+//            mMediaPlayer!!.isLooping = true
+//        } catch (e: java.lang.Exception) {
+//            Log.d("taq1000", "ringtone exception :  $e")
+//        }
+//    }
+//
+//    private fun stopTone() {
+//        Log.d("taq1000", "ringtone stop called :  ")
+//        try {
+//            if (mMediaPlayer?.isPlaying()!!) {
+//                mMediaPlayer!!.stop()
+//                mMediaPlayer!!.release()
+//                //            mMediaPlayer = null;
+//            }
+//        } catch (e: Exception) {
+//        }
+//    }
+
+
 
 
     private fun loadJsonDataIntoDatabase_last_update() {
@@ -89,6 +166,8 @@ class SplashActivity : AppCompatActivity() {
         val request = RetrofitClientInstance.buildService(APIServices::class.java)
         val call = request.getLastUpdates()
 
+//        doctorChamberBookApiCall()
+
         call.enqueue(object : Callback<LastUpdateModel> {
             override fun onResponse(
                 call: Call<LastUpdateModel>,
@@ -96,12 +175,12 @@ class SplashActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
 
+                    val last_update = response.body()!!.last_update
                     val branch_update = response.body()!!.branch_update
                     val chamber_update = response.body()!!.chamber_update
                     val department_update = response.body()!!.department_update
                     val doctor_update = response.body()!!.doctor_update
                     val investigation_update = response.body()!!.investigation_update
-                    val last_update = response.body()!!.last_update
                     val package_update = response.body()!!.package_update
 //                    val last_update = response.body()!!.last_update
 
@@ -113,19 +192,20 @@ class SplashActivity : AppCompatActivity() {
                         sharedPreference!!.save(KEY_LAST_UPDATE, last_update)
                     }
 
-                    if (!last_update.equals(
+                    if (!branch_update.equals(
                             sharedPreference!!.getValueString(KEY_BRANCH_UPDATE),
                             ignoreCase = true
                         )
                     ) {
                         sharedPreference!!.save(KEY_BRANCH_UPDATE, branch_update)
 
-                        branchViewModel = ViewModelProvider(this@SplashActivity).get(BranchViewModel::class.java)
+                        branchViewModel =
+                            ViewModelProvider(this@SplashActivity).get(BranchViewModel::class.java)
                         deleteBranchData()
                         branchApiCall()
                     }
 
-                    if (!last_update.equals(
+                    if (!chamber_update.equals(
                             sharedPreference!!.getValueString(KEY_CHAMBER_UPDATE),
                             ignoreCase = true
                         )
@@ -138,44 +218,49 @@ class SplashActivity : AppCompatActivity() {
                         doctorChamberBookApiCall()
                     }
 
-                    if (!last_update.equals(
+                    if (!department_update.equals(
                             sharedPreference!!.getValueString(KEY_DEPARTMENT_UPDATE),
                             ignoreCase = true
                         )
                     ) {
                         sharedPreference!!.save(KEY_DEPARTMENT_UPDATE, department_update)
 
-                        departmentViewModel = ViewModelProvider(this@SplashActivity).get(DepartmentViewModel::class.java)
+                        departmentViewModel = ViewModelProvider(this@SplashActivity).get(
+                            DepartmentViewModel::class.java
+                        )
                         deleteDepartmentData()
                         departmentApiCall()
                     }
 
-                    if (!last_update.equals(
+                    if (!doctor_update.equals(
                             sharedPreference!!.getValueString(KEY_DOCTOR_UPDATE),
                             ignoreCase = true
                         )
                     ) {
                         sharedPreference!!.save(KEY_DOCTOR_UPDATE, doctor_update)
 
-                        doctorViewModel = ViewModelProvider(this@SplashActivity).get(DoctorViewModel::class.java)
+                        doctorViewModel =
+                            ViewModelProvider(this@SplashActivity).get(DoctorViewModel::class.java)
                         deleteDoctorData()
                         doctorApiCall()
                     }
 
-                    if (!last_update.equals(
+                    if (!investigation_update.equals(
                             sharedPreference!!.getValueString(KEY_INVESTIGATION_UPDATE),
                             ignoreCase = true
                         )
                     ) {
                         sharedPreference!!.save(KEY_INVESTIGATION_UPDATE, investigation_update)
 
-                        investigationViewModel = ViewModelProvider(this@SplashActivity).get(InvestigationViewModel::class.java)
+                        investigationViewModel = ViewModelProvider(this@SplashActivity).get(
+                            InvestigationViewModel::class.java
+                        )
                         deleteInvestigationData()
                         investigationApiCall()
 
                     }
 
-                    if (!last_update.equals(
+                    if (!package_update.equals(
                             sharedPreference!!.getValueString(KEY_PACKAGE_UPDATE),
                             ignoreCase = true
                         )
@@ -233,7 +318,8 @@ class SplashActivity : AppCompatActivity() {
 
     }
 
-    private fun branchApiCall() {
+    private fun doctorApiCall() {
+
         val request = RetrofitClientInstance.buildService(APIServices::class.java)
         val call = request.getAllDoctors()
 
@@ -249,10 +335,15 @@ class SplashActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
 
+//                    doctorChamberBookViewModel = ViewModelProvider(this@SplashActivity).get(DoctorChamberBookViewModel::class.java)
+//                    var doctorBranch = doctorChamberBookViewModel.getBranchByDoctorId(53)
                     Log.d("tagRifat33333", "response is: " + contents)
+
 
                     for (i in 0 until contents.size) {
                         val itemDetail = contents.get(i)
+
+//                        var doctorBranch = doctorChamberBookViewModel.getBranchByDoctorId(itemDetail.id)
 
                         val doctor = Doctor(
                             itemDetail.id,
@@ -261,7 +352,8 @@ class SplashActivity : AppCompatActivity() {
                             itemDetail.doctorDept.name,
                             itemDetail.branchNo,
                             itemDetail.qualification,
-                            itemDetail.designation
+                            itemDetail.designation,
+                            itemDetail.branchNo.toString()
 
                         )
                         doctorViewModel.addDoctor(doctor)
@@ -320,7 +412,7 @@ class SplashActivity : AppCompatActivity() {
 
     }
 
-    private fun doctorApiCall() {
+    private fun branchApiCall() {
 
         val request = RetrofitClientInstance.buildService(APIServices::class.java)
         val call = request.getBranches()
@@ -338,7 +430,7 @@ class SplashActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
 
-                    Log.d("tagRifat33333", "response is: " + contents)
+                    Log.d("tagRifat33333", "doctor response is: " + contents)
 
                     for (i in 0 until contents.size) {
                         val itemDetail = contents.get(i)
@@ -381,24 +473,45 @@ class SplashActivity : AppCompatActivity() {
                     val contents: List<com.example.ibnsinadoctorappointment.data.models.doctor_chamber_book.Content> =
                         response.body()!!.content
 
+                    Log.d("tagRifat33333", "DoctorChamberBook response is: " + contents)
+
                     Toast.makeText(
                         this@SplashActivity,
                         "response: " + contents.toString(),
                         Toast.LENGTH_LONG
                     ).show()
 
-                    Log.d("tagRifat33333", "response is: " + contents)
 
                     for (i in 0 until contents.size) {
                         val itemDetail = contents.get(i)
 
                         val doctor = DoctorChamberBook(
                             itemDetail.dbNo,
+                            itemDetail.doctor,
                             itemDetail.nickName,
-                            itemDetail.avatarPath,
-                            itemDetail.qualification,
-                            itemDetail.designation
+                            itemDetail.avatarPath.toString(),
+                            itemDetail.qualification.toString(),
+                            itemDetail.designation.toString(),
+                            itemDetail.branchName,
+                            itemDetail.deptName,
+                            itemDetail.appointmentLockedDate.toString(),
 
+                            itemDetail.satStart.toString(),
+                            itemDetail.satEnd.toString(),
+                            itemDetail.sunStart.toString(),
+                            itemDetail.sunEnd.toString(),
+                            itemDetail.monStart.toString(),
+                            itemDetail.monEnd.toString(),
+                            itemDetail.tueStart.toString(),
+                            itemDetail.tueEnd.toString(),
+                            itemDetail.wedStart.toString(),
+                            itemDetail.wedEnd.toString(),
+                            itemDetail.thuStart.toString(),
+                            itemDetail.thuEnd.toString(),
+                            itemDetail.friStart.toString(),
+                            itemDetail.friEnd.toString(),
+
+                            itemDetail.days2TakeAppoint.toString()
                         )
                         doctorChamberBookViewModel.addDoctorChamberBook(doctor)
                     }

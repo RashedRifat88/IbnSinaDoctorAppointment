@@ -83,6 +83,18 @@
         <action
             android:id="@+id/action_patientFormFragment_to_doctorListFragment"
             app:destination="@id/doctorListFragment" />
+        <action
+            android:id="@+id/action_patientFormFragment_to_doctorDetailsFragment"
+            app:destination="@id/doctorDetailsFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_patientFormFragment_to_doctorListFragment2"-->
+<!--            app:destination="@id/doctorListFragment" />-->
+<!--        <action-->
+<!--            android:id="@+id/action_patientFormFragment_to_bookDoctorFragment2"-->
+<!--            app:destination="@id/bookDoctorFragment" />-->
+        <action
+            android:id="@+id/action_patientFormFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/doctorDetailsFragment"

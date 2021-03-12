@@ -96,17 +96,16 @@ class MainActivity : AppCompatActivity() {
                     for (i in 0 until contents.size) {
                         val itemDetail = contents.get(i)
 
-                        val doctor = Doctor(
-                            itemDetail.id,
-                            itemDetail.nickName,
-                            itemDetail.avatarPath,
-                            itemDetail.doctorDept.name,
-                            itemDetail.branchNo,
-                            itemDetail.qualification,
-                            itemDetail.designation
-
-                        )
-                        doctorViewModel.addDoctor(doctor)
+//                        val doctor = Doctor(
+//                            itemDetail.id,
+//                            itemDetail.nickName,
+//                            itemDetail.avatarPath,
+//                            itemDetail.doctorDept.name,
+//                            itemDetail.branchNo,
+//                            itemDetail.qualification,
+//                            itemDetail.designation
+//                        )
+//                        doctorViewModel.addDoctor(doctor)
                     }
                     ///
 

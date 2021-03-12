@@ -2,14 +2,18 @@ package com.example.ibnsinadoctorappointment.ui.fragments.doctor_list
 
 import android.app.Activity
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
@@ -31,7 +35,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class DoctorListFragment : Fragment(R.layout.fragment_doctor_list) {
+class  DoctorListFragment : Fragment(R.layout.fragment_doctor_list) {
 
     private lateinit var branchViewModel: BranchViewModel
     private lateinit var departmentViewModel: DepartmentViewModel
@@ -52,6 +56,13 @@ class DoctorListFragment : Fragment(R.layout.fragment_doctor_list) {
     private lateinit var doctorViewModel: DoctorViewModel
     private lateinit var adapter: DoctorListAdapter
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -63,12 +74,15 @@ class DoctorListFragment : Fragment(R.layout.fragment_doctor_list) {
         viewModels()
         search()
 
+
         branchViewModel = ViewModelProvider(this).get(BranchViewModel::class.java)
         departmentViewModel = ViewModelProvider(this).get(DepartmentViewModel::class.java)
 
         loadSpinner1()
         loadSpinner2()
     }
+
+
 
 
     fun loadSpinner1() {
@@ -78,6 +92,7 @@ class DoctorListFragment : Fragment(R.layout.fragment_doctor_list) {
             Log.d("tagrifat33333", "branch list: $it")
             Log.d("tagrifat33333", "branchList.size:" + branchList.size)
 
+            branchListString.add("Select Branch")
             for (i in 0 until branchList.size) {
                 val itemDetail = branchList.get(i)
                 branchListString.add(itemDetail.branchName)
@@ -90,16 +105,18 @@ class DoctorListFragment : Fragment(R.layout.fragment_doctor_list) {
                 val adapter = context?.let {
                     ArrayAdapter(
                         it,
-                        android.R.layout.simple_spinner_item, branchListString)
+                        R.layout.spinner_item, branchListString)
                 }
                 spinner1.adapter = adapter
 
                 spinner1.onItemSelectedListener = object :
                     AdapterView.OnItemSelectedListener {
                     override fun onItemSelected(parent: AdapterView<*>,
-                                                view: View, position: Int, id: Long) {
-                        Toast.makeText(context,
-                            branchListString.toString(), Toast.LENGTH_SHORT).show()
+                                                view: View?, position: Int, id: Long) {
+//                        Toast.makeText(context,
+//                            branchListString.toString(), Toast.LENGTH_SHORT).show()
+
+                        (view as TextView?)?.setTextColor(Color.parseColor("#ffffff"))
                     }
 
                     override fun onNothingSelected(parent: AdapterView<*>) {
@@ -119,6 +136,7 @@ class DoctorListFragment : Fragment(R.layout.fragment_doctor_list) {
             Log.d("tagrifat33333", "dept list: $it")
             Log.d("tagrifat33333", "deptList.size:" + deptList.size)
 
+            deptListString.add("Select Department")
             for (i in 0 until deptList.size) {
                 val itemDetail = deptList.get(i)
                 deptListString.add(itemDetail.name)
@@ -131,16 +149,19 @@ class DoctorListFragment : Fragment(R.layout.fragment_doctor_list) {
                 val adapter = context?.let {
                     ArrayAdapter(
                         it,
-                        android.R.layout.simple_spinner_item, deptListString)
+//                        android.R.layout.simple_spinner_item, deptListString)
+                        R.layout.spinner_item, deptListString)
                 }
                 spinner2.adapter = adapter
 
                 spinner2.onItemSelectedListener = object :
                     AdapterView.OnItemSelectedListener {
                     override fun onItemSelected(parent: AdapterView<*>,
-                                                view: View, position: Int, id: Long) {
-                        Toast.makeText(context,
-                            deptListString.toString(), Toast.LENGTH_SHORT).show()
+                                                view: View?, position: Int, id: Long) {
+//                        Toast.makeText(context,
+//                            position, Toast.LENGTH_SHORT).show()
+
+                        (view as TextView?)?.setTextColor(Color.parseColor("#ffffff"))
                     }
 
                     override fun onNothingSelected(parent: AdapterView<*>) {
@@ -156,11 +177,11 @@ class DoctorListFragment : Fragment(R.layout.fragment_doctor_list) {
 
 
     private fun search() {
-        tv_search_by_name1.setOnClickListener {
-            searchDoctorByName(et_search1.text.toString())
-
-            view?.let { it1 -> context?.hideKeyboard(it1) }
-        }
+//        tv_search_by_name1.setOnClickListener {
+//            searchDoctorByName(et_search1.text.toString())
+//
+//            view?.let { it1 -> context?.hideKeyboard(it1) }
+//        }
 
 //        tv_search_by_branch1.setOnClickListener {
 //            searchDoctorByBranch(et_search1.text.toString())

@@ -128,16 +128,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="4dp"
                 android:layout_weight="1.8"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_details"
                     android:layout_width="70dp"
-                    android:layout_height="30dp"
+                    android:layout_height="34dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="0dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="0"
                     android:background="@drawable/rounded_corner1"
@@ -152,10 +152,10 @@
                 <TextView
                     android:id="@+id/tv_book"
                     android:layout_width="70dp"
-                    android:layout_height="30dp"
+                    android:layout_height="34dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginBottom="0dp"
                     android:layout_weight="0"
                     android:background="@drawable/rounded_corner1"
                     android:clickable="true"

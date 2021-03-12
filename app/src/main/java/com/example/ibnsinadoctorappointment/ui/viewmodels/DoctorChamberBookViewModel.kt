@@ -49,8 +49,57 @@ class DoctorChamberBookViewModel(application: Application) : AndroidViewModel(ap
     }
 
 
+
+    fun searchByNameAndDeptAndBranchAndDate(name : String, date : String, branch_name : String, dept_name : String): LiveData<List<DoctorChamberBook>>{
+        return repository.searchByNameAndDeptAndBranchAndDate(name, date, branch_name, dept_name)
+    }
+
+
+    fun searchDoctorByNameAndBranchAndDate(name : String, date : String, branch_name : String): LiveData<List<DoctorChamberBook>>{
+        return repository.searchDoctorByNameAndBranchAndDate(name, date, branch_name)
+    }
+
+
+    fun searchByNameAndDeptAndDate(name : String, date : String, dept_name : String): LiveData<List<DoctorChamberBook>>{
+        return repository.searchByNameAndDeptAndDate(name, date, dept_name)
+    }
+
+
+    fun searchByName1(date : String, branch_name : String, dept_name : String): LiveData<List<DoctorChamberBook>>{
+        return repository.searchByName1(date, branch_name, dept_name)
+    }
+
+
+
+    fun searchByName2(branch_name : String, dept_name : String): LiveData<List<DoctorChamberBook>>{
+        return repository.searchByName2(branch_name, dept_name)
+    }
+
+
+    fun searchDoctorByNameAndDate(name : String, date : String): LiveData<List<DoctorChamberBook>>{
+        return repository.searchDoctorByNameAndDate(name, date)
+    }
+
+
+
+    fun searchByName3(date : String, dept_name : String): LiveData<List<DoctorChamberBook>>{
+        return repository.searchByName3(date, dept_name)
+    }
+
+
+    fun searchByName4(branch_name : String, date : String): LiveData<List<DoctorChamberBook>>{
+        return repository.searchByName4(branch_name, date)
+    }
+
+
+
     fun searchByName(name : String) : LiveData<List<DoctorChamberBook>> {
         return repository.searchByName(name)
+    }
+
+
+    fun getBranchByDoctorId(name: Int): String {
+        return repository.getBranchByDoctorId(name)
     }
 
 
@@ -62,6 +111,47 @@ class DoctorChamberBookViewModel(application: Application) : AndroidViewModel(ap
     fun searchByDept(name : String) : LiveData<List<DoctorChamberBook>> {
         return repository.searchByDept(name)
     }
+
+    fun searchByDate(name : String) : LiveData<List<DoctorChamberBook>> {
+        return repository.searchByDate(name)
+    }
+
+
+    fun searchBySatDay(name : String) : LiveData<List<DoctorChamberBook>> {
+        return repository.searchBySatDay(name)
+    }
+
+
+    fun searchBySunDay(name : String) : LiveData<List<DoctorChamberBook>> {
+        return repository.searchBySunDay(name)
+    }
+
+
+    fun searchByMonDay(name : String) : LiveData<List<DoctorChamberBook>> {
+        return repository.searchByMonDay(name)
+    }
+
+
+    fun searchByTueDay(name : String) : LiveData<List<DoctorChamberBook>> {
+        return repository.searchByTueDay(name)
+    }
+
+
+    fun searchByWebDay(name : String) : LiveData<List<DoctorChamberBook>> {
+        return repository.searchByWebDay(name)
+    }
+
+
+    fun searchByThuDay(name : String) : LiveData<List<DoctorChamberBook>> {
+        return repository.searchByThuDay(name)
+    }
+
+
+    fun searchByFriDay(name : String) : LiveData<List<DoctorChamberBook>> {
+        return repository.searchByFriDay(name)
+    }
+
+
 
 
 }
