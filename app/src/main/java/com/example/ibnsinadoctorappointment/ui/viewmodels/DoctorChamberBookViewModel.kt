@@ -98,8 +98,8 @@ class DoctorChamberBookViewModel(application: Application) : AndroidViewModel(ap
     }
 
 
-    fun getBranchByDoctorId(name: Int): String {
-        return repository.getBranchByDoctorId(name)
+    fun getBranchByDoctorId(id: Int): DoctorChamberBook {
+        return repository.getBranchByDoctorId(id)
     }
 
 

@@ -14,11 +14,14 @@ data class Branch (
     @ColumnInfo(name = "column_branchName")
     var branchName : String,
 
-//    @ColumnInfo(name = "column_address1")
-//    var address1 : String,
-//
-//    @ColumnInfo(name = "column_address2")
-//    var address2 : String,
+    @ColumnInfo(name = "column_branchDesc")
+    var branchDesc : String,
+
+    @ColumnInfo(name = "column_address1")
+    var address1 : String,
+
+    @ColumnInfo(name = "column_address2")
+    var address2 : String,
 
     @ColumnInfo(name = "column_contact1")
     var contact1 : String,
@@ -26,7 +29,10 @@ data class Branch (
     @ColumnInfo(name = "column_contact2")
     var contact2 : String,
 
-    @ColumnInfo(name = "column_contactPerson")
-    var contactPerson : String
+    @ColumnInfo(name = "column_email")
+    var email : String,
+
+    @ColumnInfo(name = "column_web")
+    var web : String
 
 )

@@ -25,8 +25,8 @@ class DoctorDetailsFragment : Fragment(R.layout.fragment_doctor_details) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        doctorName = arguments?.getString("doctork_name").toString()
-        doctorDeg = arguments?.getString("doctork_qualification").toString()
+        doctorName = arguments?.getString("doctor_name").toString()
+        doctorDeg = arguments?.getString("doctor_qualification").toString()
         doctor_department = arguments?.getString("doctor_department").toString()
         doctor_designation = arguments?.getString("doctor_designation").toString()
     }
@@ -47,15 +47,15 @@ class DoctorDetailsFragment : Fragment(R.layout.fragment_doctor_details) {
         tv_degree_details.text = doctorDeg
         tv_designation_details.text = doctor_designation
         tv_branch_details.text = doctorDeg
-        tv_mobile_details.text = doctorDeg
+//        tv_mobile_details.text = doctorDeg
     }
 
 
     private fun clickEvent() {
 
         val bundle = Bundle()
-        bundle.putString("doctork_name", doctorName)
-        bundle.putString("doctork_qualification", doctorDeg)
+        bundle.putString("doctor_name", doctorName)
+        bundle.putString("doctor_qualification", doctorDeg)
 
         btn_book_details.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_doctorDetailsFragment_to_patientFormFragment, bundle)

@@ -8,9 +8,9 @@ import com.example.ibnsinadoctorappointment.data.models.doctor_chamber_book.Doct
 import com.example.ibnsinadoctorappointment.data.models.health_package.HealthPackageModel
 import com.example.ibnsinadoctorappointment.data.models.investigation.InvestigationModel
 import com.example.ibnsinadoctorappointment.data.models.last_update.LastUpdateModel
+import com.example.ibnsinadoctorappointment.data.models.submit_appointment.SubmitAppointmentModel
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface APIServices {
 
@@ -47,6 +47,25 @@ interface APIServices {
         @Query("chamber") chamber: String,
         @Query("date") date: String
     ): Call<ChamberAvailableModel>
+
+
+    @FormUrlEncoded
+    @POST("index.php?appt")
+    fun submitAppointment(
+        @Field("appointment_note") apptappointment_note: String,
+        @Field("branch_id") branch_id: String,
+        @Field("chamber_id") chamber_id: String,
+        @Field("doctor_id") doctor_id: String,
+        @Field("pat_contact") pat_contact: String,
+        @Field("doctor_name") doctor_name: String,
+        @Field("appointment_date") appointment_date: String,
+        @Field("appointment_type") appointment_type: String,
+        @Field("gender") gender: String,
+        @Field("pat_name") pat_name: String,
+        @Field("average_time") average_time: String,
+        @Field("start_time") start_time: String,
+        @Field("contact2") contact2: String
+    ): Call<SubmitAppointmentModel>
 
 
 //    @GET("rifat/doctor.json")

@@ -8,12 +8,14 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.telephony.TelephonyManager
 import android.util.Log
+import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.app.ActivityCompat
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import com.example.ibnsinadoctorappointment.R
 import com.example.ibnsinadoctorappointment.data.database.shared_pref.SharedPreference
@@ -29,9 +31,12 @@ import com.example.ibnsinadoctorappointment.retrofit.APIServices
 import com.example.ibnsinadoctorappointment.retrofit.RetrofitClientInstance
 import com.example.ibnsinadoctorappointment.ui.activities.MainActivity
 import com.example.ibnsinadoctorappointment.ui.viewmodels.*
+import kotlinx.android.synthetic.main.fragment_book_doctor.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
+import kotlin.concurrent.schedule
 
 class SplashActivity : AppCompatActivity() {
 
@@ -54,6 +59,7 @@ class SplashActivity : AppCompatActivity() {
     private val KEY_INVESTIGATION_UPDATE = "investigation_update"
     private val KEY_LAST_UPDATE = "last_update"
     private val KEY_PACKAGE_UPDATE = "package_update"
+    private val KEY_NEW_INSTALL = "new_install"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -91,6 +97,33 @@ class SplashActivity : AppCompatActivity() {
 
 
 //        userPhoneNumber()
+
+//        newInstallIdentify()
+
+//        doctorChamberBookViewModel =
+//            ViewModelProvider(this@SplashActivity).get(DoctorChamberBookViewModel::class.java)
+//        var doctorBranch = doctorChamberBookViewModel.getBranchByDoctorId(53)
+//        Log.d("tagRifat33333444444", "doctorBranch is: " + doctorBranch)
+
+        doctorChamberBookViewModel =
+            ViewModelProvider(this@SplashActivity).get(DoctorChamberBookViewModel::class.java)
+    }
+
+    private fun newInstallIdentify() {
+        var nii:String = "yes"
+
+
+        if (!nii.equals(
+                sharedPreference!!.getValueString(KEY_NEW_INSTALL),
+                ignoreCase = true
+            )
+        ) {
+            sharedPreference!!.save(KEY_NEW_INSTALL, "yes")
+
+
+        } else{
+
+        }
     }
 
     private fun userPhoneNumber() {
@@ -190,19 +223,10 @@ class SplashActivity : AppCompatActivity() {
                         )
                     ) {
                         sharedPreference!!.save(KEY_LAST_UPDATE, last_update)
-                    }
 
-                    if (!branch_update.equals(
-                            sharedPreference!!.getValueString(KEY_BRANCH_UPDATE),
-                            ignoreCase = true
-                        )
-                    ) {
-                        sharedPreference!!.save(KEY_BRANCH_UPDATE, branch_update)
-
-                        branchViewModel =
-                            ViewModelProvider(this@SplashActivity).get(BranchViewModel::class.java)
-                        deleteBranchData()
-                        branchApiCall()
+//                        Timer().schedule(20000) {
+//
+//                        }
                     }
 
                     if (!chamber_update.equals(
@@ -218,6 +242,24 @@ class SplashActivity : AppCompatActivity() {
                         doctorChamberBookApiCall()
                     }
 
+
+
+
+
+                    if (!branch_update.equals(
+                            sharedPreference!!.getValueString(KEY_BRANCH_UPDATE),
+                            ignoreCase = true
+                        )
+                    ) {
+                        sharedPreference!!.save(KEY_BRANCH_UPDATE, branch_update)
+
+                        branchViewModel =
+                            ViewModelProvider(this@SplashActivity).get(BranchViewModel::class.java)
+                        deleteBranchData()
+                        branchApiCall()
+                    }
+
+
                     if (!department_update.equals(
                             sharedPreference!!.getValueString(KEY_DEPARTMENT_UPDATE),
                             ignoreCase = true
@@ -230,19 +272,6 @@ class SplashActivity : AppCompatActivity() {
                         )
                         deleteDepartmentData()
                         departmentApiCall()
-                    }
-
-                    if (!doctor_update.equals(
-                            sharedPreference!!.getValueString(KEY_DOCTOR_UPDATE),
-                            ignoreCase = true
-                        )
-                    ) {
-                        sharedPreference!!.save(KEY_DOCTOR_UPDATE, doctor_update)
-
-                        doctorViewModel =
-                            ViewModelProvider(this@SplashActivity).get(DoctorViewModel::class.java)
-                        deleteDoctorData()
-                        doctorApiCall()
                     }
 
                     if (!investigation_update.equals(
@@ -266,6 +295,25 @@ class SplashActivity : AppCompatActivity() {
                         )
                     ) {
                         sharedPreference!!.save(KEY_PACKAGE_UPDATE, package_update)
+                    }
+
+
+                    if (!doctor_update.equals(
+                            sharedPreference!!.getValueString(KEY_DOCTOR_UPDATE),
+                            ignoreCase = true
+                        )
+                    ) {
+                        sharedPreference!!.save(KEY_DOCTOR_UPDATE, doctor_update)
+
+                        doctorViewModel =
+                            ViewModelProvider(this@SplashActivity).get(DoctorViewModel::class.java)
+                        deleteDoctorData()
+
+                        doctorApiCall()
+
+//                        Timer().schedule(10000) {
+//                            doctorApiCall()
+//                        }
                     }
 
 
@@ -335,15 +383,30 @@ class SplashActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
 
-//                    doctorChamberBookViewModel = ViewModelProvider(this@SplashActivity).get(DoctorChamberBookViewModel::class.java)
-//                    var doctorBranch = doctorChamberBookViewModel.getBranchByDoctorId(53)
+
                     Log.d("tagRifat33333", "response is: " + contents)
 
 
                     for (i in 0 until contents.size) {
                         val itemDetail = contents.get(i)
 
-//                        var doctorBranch = doctorChamberBookViewModel.getBranchByDoctorId(itemDetail.id)
+//                        doctorChamberBookViewModel =
+//                            ViewModelProvider(this@SplashActivity).get(DoctorChamberBookViewModel::class.java)
+
+
+//                        var branch: DoctorChamberBook = doctorChamberBookViewModel.getBranchByDoctorId(itemDetail.id)
+//
+//                        Log.d("tagRifat33333444444", "branch.branchName is: " + branch.branchName)
+//
+////                        var doctorBranch: String = branch.value?.branchName.toString()
+//                        var doctorBranch = branch.branchName?.toString()
+////                        var doctorBranch: String = branch.
+//                        Log.d("tagRifat33333444444", "itemDetail.id is: " + itemDetail.id)
+//                        Log.d("tagRifat33333444444", "doctorBranch is: " + doctorBranch)
+//                        Log.d("tagRifat33333444444", "branch is: " + branch)
+
+
+
 
                         val doctor = Doctor(
                             itemDetail.id,
@@ -353,9 +416,22 @@ class SplashActivity : AppCompatActivity() {
                             itemDetail.branchNo,
                             itemDetail.qualification,
                             itemDetail.designation,
+                            itemDetail.averageTime.toString(),
                             itemDetail.branchNo.toString()
-
                         )
+
+//                        val doctor = Doctor(
+//                            itemDetail.id,
+//                            itemDetail.nickName,
+//                            itemDetail.avatarPath,
+//                            itemDetail.doctorDept.name,
+//                            itemDetail.branchNo,
+//                            itemDetail.qualification,
+//                            itemDetail.designation,
+//                            itemDetail.averageTime.toString(),
+//                            doctorBranch.toString()
+//                        )
+
                         doctorViewModel.addDoctor(doctor)
                     }
 
@@ -435,14 +511,32 @@ class SplashActivity : AppCompatActivity() {
                     for (i in 0 until contents.size) {
                         val itemDetail = contents.get(i)
 
+                        var address1 = ""
+                        var address2 = ""
+
+                        if (itemDetail.address1 != null){
+                            address1 = itemDetail.address1.toString()
+                        }else{
+                            address1 = ""
+                        }
+
+                        if (itemDetail.address2 != null){
+                            address2 = itemDetail.address2.toString()
+                        }else{
+                            address2 = ""
+                        }
+
+
                         val doctor = Branch(
                             itemDetail.id,
                             itemDetail.branchName,
-//                            itemDetail.address1 as String,
-//                            itemDetail.address2 as String,
+                            itemDetail.branchDesc,
+                            address1.toString(),
+                            address2.toString(),
                             itemDetail.contact1,
                             itemDetail.contact2,
-                            itemDetail.contactPerson
+                            itemDetail.email,
+                            itemDetail.web
                         )
                         branchViewModel.addBranch(doctor)
                     }
@@ -493,6 +587,7 @@ class SplashActivity : AppCompatActivity() {
                             itemDetail.qualification.toString(),
                             itemDetail.designation.toString(),
                             itemDetail.branchName,
+                            itemDetail.branchNo.toString(),
                             itemDetail.deptName,
                             itemDetail.appointmentLockedDate.toString(),
 

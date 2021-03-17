@@ -29,6 +29,9 @@ data class DoctorChamberBook(
     @ColumnInfo(name = "column_branchName")
     var branchName: String,
 
+    @ColumnInfo(name = "column_branchNo")
+    var branchNo: String,
+
     @ColumnInfo(name = "column_deptName")
     var deptName: String,
 

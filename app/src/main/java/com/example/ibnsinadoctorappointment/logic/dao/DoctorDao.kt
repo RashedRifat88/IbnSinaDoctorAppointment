@@ -3,6 +3,7 @@ package com.example.ibnsinadoctorappointment.logic.dao
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.ibnsinadoctorappointment.data.models.Doctor
+import com.example.ibnsinadoctorappointment.data.models.DoctorChamberBook
 
 @Dao
 interface DoctorDao {
@@ -32,5 +33,62 @@ interface DoctorDao {
 
     @Query("SELECT * FROM doctor_table WHERE column_designation LIKE :name")
     fun searchByDept (name : String) :LiveData<List<Doctor>>
+
+    @Query("SELECT * FROM doctor_table WHERE column_id = :id")
+    fun getDoctorByDoctorId(id: Int): Doctor
+
+
+    ///
+//
+//    @Query("SELECT * FROM doctor_chamber_book_table WHERE column_branchName LIKE :branch_name AND column_deptName LIKE :dept_name AND column_nickName LIKE :name")
+//    fun searchByNameAndDeptAndBranch(
+//        name: String,
+//        branch_name: String,
+//        dept_name: String
+//    ): LiveData<List<Doctor>>
+//
+//
+//
+//
+//    @Query("SELECT * FROM doctor_chamber_book_table WHERE column_branchName LIKE :branch_name AND column_nickName LIKE :name")
+//    fun searchDoctorByNameAndBranch(
+//        name: String,
+//        branch_name: String
+//    ): LiveData<List<Doctor>>
+//
+//
+//
+//    @Query("SELECT * FROM doctor_chamber_book_table WHERE column_deptName LIKE :dept_name AND column_nickName LIKE :name")
+//    fun searchByNameAndDept(
+//        name: String,
+//        dept_name: String
+//    ): LiveData<List<Doctor>>
+//
+//
+//    @Query("SELECT * FROM doctor_chamber_book_table WHERE column_branchName LIKE :branch_name AND column_deptName LIKE :dept_name")
+//    fun searchByName1(
+//        branch_name: String,
+//        dept_name: String
+//    ): LiveData<List<Doctor>>
+//
+//    @Query("SELECT * FROM doctor_chamber_book_table WHERE column_branchName LIKE :branch_name AND column_deptName LIKE :dept_name")
+//    fun searchByName2(branch_name: String, dept_name: String): LiveData<List<Doctor>>
+//
+//
+//    @Query("SELECT * FROM doctor_chamber_book_table WHERE column_nickName LIKE :name")
+//    fun searchDoctorByName(name: String): LiveData<List<Doctor>>
+//
+//
+//    @Query("SELECT * FROM doctor_chamber_book_table WHERE column_deptName LIKE :dept_name")
+//    fun searchByName3(dept_name: String): LiveData<List<Doctor>>
+//
+//
+//    @Query("SELECT * FROM doctor_chamber_book_table WHERE column_branchName LIKE :branch_name")
+//    fun searchByName4(branch_name: String): LiveData<List<Doctor>>
+//
+//
+//    ///
+
+    ///
 
 }

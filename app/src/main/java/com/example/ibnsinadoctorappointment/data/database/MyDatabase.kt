@@ -22,6 +22,8 @@ abstract class MyDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: MyDatabase? = null
 
+//        MyApp.database =  Room.databaseBuilder(this, AppDatabase::class.java, "MyDatabase").allowMainThreadQueries().build()
+
         fun getDatabase(context: Context): MyDatabase {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
@@ -32,10 +34,30 @@ abstract class MyDatabase : RoomDatabase() {
                     context.applicationContext,
                     MyDatabase::class.java,
                     "my_database"
-                ).build()
+                ).allowMainThreadQueries().build()
                 INSTANCE = instance
                 return instance
             }
         }
+
+
+//        fun getDatabase(context: Context): MyDatabase {
+//            val tempInstance = INSTANCE
+//            if (tempInstance != null) {
+//                return tempInstance
+//            }
+//            synchronized(this) {
+//                val instance = Room.databaseBuilder(
+//                    context.applicationContext,
+//                    MyDatabase::class.java,
+//                    "my_database"
+//                ).build()
+//                INSTANCE = instance
+//                return instance
+//            }
+//        }
+
+
+
     }
 }

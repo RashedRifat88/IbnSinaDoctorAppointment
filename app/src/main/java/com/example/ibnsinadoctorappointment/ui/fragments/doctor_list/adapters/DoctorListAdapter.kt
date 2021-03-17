@@ -79,8 +79,8 @@ class DoctorListAdapter : RecyclerView.Adapter<DoctorListAdapter.DoctorViewHolde
 
 
         val bundle = Bundle()
-        bundle.putString("doctork_name", currentDoctor.nickName)
-        bundle.putString("doctork_qualification", currentDoctor.qualification)
+        bundle.putString("doctor_name", currentDoctor.nickName)
+        bundle.putString("doctor_qualification", currentDoctor.qualification)
         bundle.putString("doctor_department", currentDoctor.doctorDept)
         bundle.putString("doctor_designation", currentDoctor.designation)
 //        bundle.putString("doctor_mobile", currentDoctor.)

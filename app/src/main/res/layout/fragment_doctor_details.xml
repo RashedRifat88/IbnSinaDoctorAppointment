@@ -18,12 +18,12 @@
             android:background="@color/colorPrimary"
             android:orientation="vertical">
 
-<!--            <de.hdodenhof.circleimageview.CircleImageView-->
-<!--                android:layout_width="130dp"-->
-<!--                android:layout_height="130dp"-->
-<!--                android:layout_gravity="center_horizontal"-->
-<!--                android:layout_marginTop="35dp"-->
-<!--                android:src="@drawable/rifat" />-->
+            <!--            <de.hdodenhof.circleimageview.CircleImageView-->
+            <!--                android:layout_width="130dp"-->
+            <!--                android:layout_height="130dp"-->
+            <!--                android:layout_gravity="center_horizontal"-->
+            <!--                android:layout_marginTop="35dp"-->
+            <!--                android:src="@drawable/rifat" />-->
 
 
             <RelativeLayout
@@ -105,7 +105,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="1.4"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -128,7 +128,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="1.4"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -151,7 +151,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="1.4"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -182,6 +182,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_gravity="left"
             android:layout_marginTop="15dp"
             android:orientation="vertical">
 
@@ -189,121 +191,181 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingLeft="25dp">
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:weightSum="4"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/ic_doctor_2" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="30dp"-->
+                <!--                    android:layout_height="30dp"-->
+                <!--                    android:src="@drawable/ic_doctor_2" />-->
 
                 <TextView
+                    android:layout_weight="1.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingLeft="5dp"
+                    android:text="Name:"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_weight="3"
                     android:id="@+id/tv_name_details"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="left"
+                    android:gravity="left"
                     android:fontFamily="@font/roboto_regular"
-                    android:paddingLeft="20dp"
-                    android:text="Rashed rifat"
-                    android:textSize="17sp" />
+                    android:paddingLeft="5dp"
+                    android:text="NameNameNameNameNameNameNameNameNameNameNameNameNameName"
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
             <LinearLayout
+                android:weightSum="4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="12dp"
                 android:orientation="horizontal"
-                android:paddingLeft="25dp">
+                android:paddingLeft="10dp">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/ic_graduation_hat" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="30dp"-->
+                <!--                    android:layout_height="30dp"-->
+                <!--                    android:src="@drawable/ic_graduation_hat" />-->
 
                 <TextView
+                    android:layout_weight="1.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingLeft="5dp"
+                    android:text="Degree:"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_weight="3"
                     android:id="@+id/tv_degree_details"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="left"
                     android:fontFamily="@font/roboto_regular"
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="5dp"
                     android:text="Degree"
-                    android:textSize="17sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
 
-
             <LinearLayout
+                android:weightSum="4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="12dp"
                 android:orientation="horizontal"
-                android:paddingLeft="25dp">
+                android:paddingLeft="10dp">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/ic_speciality" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="30dp"-->
+                <!--                    android:layout_height="30dp"-->
+                <!--                    android:src="@drawable/ic_speciality" />-->
 
                 <TextView
+                    android:layout_weight="1.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingLeft="5dp"
+                    android:text="Designation:"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_weight="3"
                     android:id="@+id/tv_designation_details"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="left"
                     android:fontFamily="@font/roboto_regular"
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="5dp"
                     android:text="Degree"
-                    android:textSize="17sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
 
-
-
-
             <LinearLayout
+                android:weightSum="4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="12dp"
                 android:orientation="horizontal"
-                android:paddingLeft="25dp">
+                android:paddingLeft="10dp">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/ic_office" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="30dp"-->
+                <!--                    android:layout_height="30dp"-->
+                <!--                    android:src="@drawable/ic_office" />-->
 
                 <TextView
+                    android:layout_weight="1.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingLeft="5dp"
+                    android:text="Branches:"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_weight="3"
                     android:id="@+id/tv_branch_details"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="left"
                     android:fontFamily="@font/roboto_regular"
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="5dp"
                     android:text="Branches"
-                    android:textSize="17sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
+                android:weightSum="4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="12dp"
                 android:orientation="horizontal"
-                android:paddingLeft="25dp">
+                android:paddingLeft="10dp">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/ic_phone_call" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="30dp"-->
+                <!--                    android:layout_height="30dp"-->
+                <!--                    android:src="@drawable/ic_phone_call" />-->
 
                 <TextView
-                    android:id="@+id/tv_mobile_details"
-                    android:layout_width="wrap_content"
+                    android:layout_weight="1.4"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingLeft="5dp"
+                    android:text="Ex Chamber Note:"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_weight="3"
+                    android:id="@+id/tv_ex_chamber_note"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:fontFamily="@font/roboto_regular"
-                    android:paddingLeft="20dp"
-                    android:text="01777 575757"
-                    android:textSize="17sp" />
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textSize="15sp" />
             </LinearLayout>
 
 

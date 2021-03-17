@@ -71,8 +71,7 @@
                     android:layout_marginTop="1dp"
                     android:text="branch"
                     android:textSize="16sp"
-                    android:textColor="@color/white"
-                    />
+                    android:textColor="@color/white" />
 
                 <RelativeLayout
                     android:id="@+id/spinRelative1_form"
@@ -107,7 +106,6 @@
                 </RelativeLayout>
 
             </LinearLayout>
-
 
 
             <LinearLayout
@@ -196,7 +194,7 @@
                 android:orientation="vertical">
 
                 <RadioGroup
-                    android:id="@+id/daily_weekly_button_view"
+                    android:id="@+id/rg_gender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
@@ -256,6 +254,77 @@
                         android:paddingBottom="3dp"
                         android:text="Other"
                         android:textColor="@color/radio_flat_text_selector" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/rg_appointment_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <RadioButton
+                        android:id="@+id/radio4"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:minHeight="45dp"
+
+                        android:checked="false"
+                        android:gravity="center"
+                        android:paddingLeft="3dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="3dp"
+                        android:paddingBottom="3dp"
+                        android:text="New" />
+
+                    <RadioButton
+                        android:id="@+id/radio5"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:minHeight="45dp"
+
+                        android:gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:paddingLeft="3dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="3dp"
+                        android:paddingBottom="3dp"
+                        android:text="Report" />
+
+                    <RadioButton
+                        android:id="@+id/radio6"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:minHeight="45dp"
+
+
+                        android:gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:paddingLeft="3dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="3dp"
+                        android:paddingBottom="3dp"
+                        android:text="Followup" />
 
                 </RadioGroup>
 

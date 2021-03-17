@@ -147,7 +147,6 @@ class BookDoctorFragment : Fragment(R.layout.fragment_book_doctor) {
 
                         branch_name = branchListString.get(position)
 
-
                         var dateColumnValue: String = ""
                         when (strDate_of_week) {
                             "Sat" -> dateColumnValue = "column_satStart"
@@ -163,9 +162,9 @@ class BookDoctorFragment : Fragment(R.layout.fragment_book_doctor) {
                             }
                         }
 
+
                         if (!(position == 0)) {
 //                            searchDoctorByBranch(branch_name)
-
 
 
                             Log.d("tagrifat33333", "position: $position")
@@ -202,10 +201,35 @@ class BookDoctorFragment : Fragment(R.layout.fragment_book_doctor) {
                                     "branch_name: $branch_name, dateColumnValue: $dateColumnValue"
                                 )
                                 searchDoctorByBranchAndDate(branch_name, dateColumnValue)
+                            } else if (dept_name.equals("Select Department") && !et_search.text.isEmpty()) {
+
+                                Log.d("tagrifat33333", "searchDoctorByBranchAndDate is called")
+                                searchDoctorByNameAndBranchAndDate(et_search.text.toString(), branch_name, dateColumnValue)
                             }
 
-                        } else{
-                            searchDoctorByDate(dateColumnValue)
+                        } else {
+//                            searchDoctorByDate(dateColumnValue)
+
+                            if (!dept_name.equals("Select Department") && !et_search.text.isEmpty()) {
+                                searchDoctorByNameAndDeptAndDate(
+                                    et_search.text.toString(),
+                                    dept_name,
+                                    dateColumnValue
+                                )
+                            } else if (!dept_name.equals("Select Department") && et_search.text.isEmpty()) {
+                                searchDoctorByDeptAndDate(
+                                    dept_name,
+                                    dateColumnValue
+                                )
+                            } else if (dept_name.equals("Select Dept") && !et_search.text.isEmpty()) {
+                                searchDoctorByNameAndDate(
+                                    et_search.text.toString(),
+                                    dateColumnValue
+                                )
+                            } else {
+                                searchDoctorByDate(dateColumnValue)
+                            }
+
                         }
 
                     }
@@ -260,23 +284,23 @@ class BookDoctorFragment : Fragment(R.layout.fragment_book_doctor) {
 
                         dept_name = deptListString.get(position)
 
+                        var dateColumnValue: String = ""
+                        when (strDate_of_week) {
+                            "Sat" -> dateColumnValue = "column_satStart"
+                            "Sun" -> dateColumnValue = "column_sunStart"
+                            "Mon" -> dateColumnValue = "column_monStart"
+                            "Tue" -> dateColumnValue = "column_tueStart"
+                            "Wed" -> dateColumnValue = "column_wedStart"
+                            "Thu" -> dateColumnValue = "column_thuStart"
+                            "Fri" -> dateColumnValue = "column_friStart"
+
+                            else -> {
+
+                            }
+                        }
+
                         if (!(position == 0)) {
 //                            searchDoctorByDept(dept_name)
-
-                            var dateColumnValue: String = ""
-                            when (strDate_of_week) {
-                                "Sat" -> dateColumnValue = "column_satStart"
-                                "Sun" -> dateColumnValue = "column_sunStart"
-                                "Mon" -> dateColumnValue = "column_monStart"
-                                "Tue" -> dateColumnValue = "column_tueStart"
-                                "Wed" -> dateColumnValue = "column_wedStart"
-                                "Thu" -> dateColumnValue = "column_thuStart"
-                                "Fri" -> dateColumnValue = "column_friStart"
-
-                                else -> {
-
-                                }
-                            }
 
                             Log.d("tagrifat33333", "position: $position")
 
@@ -311,7 +335,44 @@ class BookDoctorFragment : Fragment(R.layout.fragment_book_doctor) {
                                     "tagrifat33333",
                                     "branch_name: $branch_name, dateColumnValue: $dateColumnValue"
                                 )
-                                searchDoctorByBranchAndDate(branch_name, dateColumnValue)
+//                                searchDoctorByBranchAndDate(branch_name, dateColumnValue)
+                                searchDoctorByDeptAndDate(dept_name, dateColumnValue)
+                            } else if (branch_name.equals("Select Branch") && !et_search.text.isEmpty()) {
+
+                                Log.d("tagrifat33333", "searchDoctorByBranchAndDate is called")
+                                Log.d(
+                                    "tagrifat33333",
+                                    "branch_name: $branch_name, dateColumnValue: $dateColumnValue"
+                                )
+//                                searchDoctorByBranchAndDate(branch_name, dateColumnValue)
+                                searchDoctorByNameAndDeptAndDate(
+                                    et_search.text.toString(),
+                                    dept_name,
+                                    dateColumnValue
+                                )
+                            }
+
+                        } else {
+//                            searchDoctorByDate(dateColumnValue)
+
+                            if (!branch_name.equals("Select Branch") && !et_search.text.isEmpty()) {
+                                searchDoctorByNameAndBranchAndDate(
+                                    et_search.text.toString(),
+                                    branch_name,
+                                    dateColumnValue
+                                )
+                            } else if (!branch_name.equals("Select Branch") && et_search.text.isEmpty()) {
+                                searchDoctorByBranchAndDate(
+                                    branch_name,
+                                    dateColumnValue
+                                )
+                            } else if (branch_name.equals("Select Branch") && !et_search.text.isEmpty()) {
+                                searchDoctorByNameAndDate(
+                                    et_search.text.toString(),
+                                    dateColumnValue
+                                )
+                            } else {
+                                searchDoctorByDate(dateColumnValue)
                             }
 
                         }
@@ -392,7 +453,8 @@ class BookDoctorFragment : Fragment(R.layout.fragment_book_doctor) {
 
 
                     Log.d(
-                        "tag55551","dept_name : $dept_name, branch_name : $branch_name , strDate : $strDate , et_search.text : $et_search.text "
+                        "tag55551",
+                        "dept_name : $dept_name, branch_name : $branch_name , strDate : $strDate , et_search.text : $et_search.text "
                     )
 
 
@@ -537,7 +599,7 @@ class BookDoctorFragment : Fragment(R.layout.fragment_book_doctor) {
                         dateColumnValue
                     )
                 } else if (branch_name.equals("Select Branch") && !dept_name.equals("Select Department")) {
-                    searchByNameAndDeptAndDate(
+                    searchDoctorByNameAndDeptAndDate(
                         et_search.text.toString(),
                         dept_name,
                         dateColumnValue
@@ -833,13 +895,19 @@ class BookDoctorFragment : Fragment(R.layout.fragment_book_doctor) {
     private fun searchDoctorByDate(title: String) {
         var searchText = "$title"
 
+        Log.d(
+            "tag5555date",
+            "Date title : $title"
+        )
+
+
         doctorViewModel = ViewModelProvider(this).get(DoctorChamberBookViewModel::class.java)
-        doctorViewModel.searchByDate(searchText).observe(viewLifecycleOwner, Observer {
+        doctorViewModel.searchByDate(title).observe(viewLifecycleOwner, Observer {
             adapter.setData(it, strDate)
             doctorList = it
 
             Log.d(
-                "tag5555",
+                "tag5555date",
                 "it in searchDoctorByDate : $it"
             )
 
@@ -1191,7 +1259,7 @@ class BookDoctorFragment : Fragment(R.layout.fragment_book_doctor) {
     }
 
 
-    private fun searchByNameAndDeptAndDate(
+    private fun searchDoctorByNameAndDeptAndDate(
         name: String,
         dept: String,
         date: String

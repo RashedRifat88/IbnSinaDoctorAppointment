@@ -78,7 +78,7 @@ class DoctorChamberBookRepository (private val doctorChamberBookDao: DoctorChamb
     }
 
 
-    fun getBranchByDoctorId(name : Int): String{
+    fun getBranchByDoctorId(name : Int): DoctorChamberBook {
         return doctorChamberBookDao.getBranchByDoctorId(name)
     }
 

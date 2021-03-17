@@ -108,5 +108,14 @@
             android:id="@+id/action_doctorDetailsFragment_to_patientFormFragment"
             app:destination="@id/patientFormFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/branchListFragment"
+        android:name="com.example.ibnsinadoctorappointment.ui.fragments.branch_list.BranchListFragment"
+        android:label="Branch List"
+        tools:layout="@layout/fragment_branch_list" >
+        <action
+            android:id="@+id/action_branchListFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 
 </navigation>

@@ -21,7 +21,7 @@ object RetrofitClientInstance {
 
 
 
-//    private val BASE_URL = "https://wger.de/api/v2/"
+//    private val BASE_URL = ""
 //
 //    private val httpClient = OkHttpClient.Builder()
 //

@@ -21,8 +21,8 @@ interface DoctorChamberBookDao {
     fun getAllDoctorChamberBooks(): LiveData<List<DoctorChamberBook>>
 
 
-    @Query("SELECT column_branchName FROM doctor_chamber_book_table WHERE column_doctorId LIKE :name")
-    fun getBranchByDoctorId(name: Int): String
+    @Query("SELECT * FROM doctor_chamber_book_table WHERE column_doctorId = :name")
+    fun getBranchByDoctorId(name: Int): DoctorChamberBook
 
 
 //    @Query("SELECT * FROM doctor_chamber_book_table WHERE column_nickName LIKE :name")
@@ -92,8 +92,12 @@ interface DoctorChamberBookDao {
     @Query("SELECT * FROM doctor_chamber_book_table WHERE column_deptName LIKE :name")
     fun searchByDept(name: String): LiveData<List<DoctorChamberBook>>
 
-    @Query("SELECT * FROM doctor_chamber_book_table WHERE :date NOT LIKE '00:00:00'")
+    @Query("SELECT * FROM doctor_chamber_book_table WHERE :date <> '00:00:00' ")
     fun searchByDate(date: String): LiveData<List<DoctorChamberBook>>
+
+
+//    @Query("SELECT * FROM doctor_chamber_book_table WHERE column_friStart != '00:00:00' ")
+//    fun searchByDate(date: String): LiveData<List<DoctorChamberBook>>
 
 //    @Query("SELECT * FROM doctor_chamber_book_table WHERE  column_deptName NOT LIKE :date")
 //    fun searchByDate(date: String): LiveData<List<DoctorChamberBook>>

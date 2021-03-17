@@ -8,23 +8,33 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.ibnsinadoctorappointment.R
 import com.example.ibnsinadoctorappointment.data.models.Doctor
 import com.example.ibnsinadoctorappointment.data.models.DoctorChamberBook
 import com.example.ibnsinadoctorappointment.data.models.Investigation
-import com.example.ibnsinadoctorappointment.ui.viewmodels.DoctorChamberBookViewModel
-import com.example.ibnsinadoctorappointment.ui.viewmodels.DoctorViewModel
-import com.example.ibnsinadoctorappointment.ui.viewmodels.InvestigationViewModel
+import com.example.ibnsinadoctorappointment.data.models.doctor.Content
+import com.example.ibnsinadoctorappointment.ui.viewmodels.*
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.fragment_doctor_list.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.json.JSONObject
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
 
+
+    private lateinit var investigationViewModel: InvestigationViewModel
     private lateinit var doctorViewModel: DoctorViewModel
+    private lateinit var doctorChamberBookViewModel: DoctorChamberBookViewModel
+    private lateinit var branchViewModel: BranchViewModel
+    private lateinit var departmentViewModel: DepartmentViewModel
+    private lateinit var healthPackageViewModel: HealthPackageViewModel
+    private lateinit var lastUpdateViewModel: LastUpdateViewModel
+
+    private lateinit var doctorList: List<Doctor>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -35,7 +45,59 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
 //        deleteDoctorData()
 //        loadDoctorData()
+
+        loadDoctor()
+
     }
+
+
+    private fun loadDoctor() {
+        doctorViewModel = ViewModelProvider(this).get(DoctorViewModel::class.java)
+
+        doctorViewModel.getAllDoctors.observe(viewLifecycleOwner, Observer {
+            doctorList = it
+        })
+
+//        updateDoctorData()
+    }
+
+
+//    private fun updateDoctorData() {
+//        doctorChamberBookViewModel =
+//            ViewModelProvider(this).get(DoctorChamberBookViewModel::class.java)
+//
+//
+//        for (i in 0 until doctorList.size) {
+//            val itemDetail = doctorList.get(i)
+//
+//            var branch: DoctorChamberBook =
+//                doctorChamberBookViewModel.getBranchByDoctorId(itemDetail.id)
+//
+//            Log.d("tagRifat33333444444", "branch.branchName is: " + branch.branchName)
+//
+////                        var doctorBranch: String = branch.value?.branchName.toString()
+//            var doctorBranch = branch.branchName?.toString()
+////                        var doctorBranch: String = branch.
+//            Log.d("tagRifat33333444444", "itemDetail.id is: " + itemDetail.id)
+//            Log.d("tagRifat33333444444", "doctorBranch is: " + doctorBranch)
+//            Log.d("tagRifat33333444444", "branch is: " + branch)
+//
+//
+//            val doctor = Doctor(
+//                itemDetail.id,
+//                itemDetail.nickName,
+//                itemDetail.avatarPath,
+//                itemDetail.doctorDept,
+//                itemDetail.branchNo,
+//                itemDetail.qualification,
+//                itemDetail.designation,
+//                doctorBranch
+//            )
+//
+//
+//            doctorViewModel.updateDoctor(doctor)
+//        }
+//    }
 
 
     private fun deleteDoctorData() {
@@ -65,8 +127,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 //
 //        Log.d("tagRifat1234", "json is: " + jsonText)
 //    }
-
-
 
 
     private fun clickEvent() {

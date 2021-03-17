@@ -26,6 +26,11 @@ class BranchRepository (private val branchDao: BranchDao) {
 
 
 
+    fun getBranchObjByBranchName(name : String): Branch{
+        return branchDao.getBranchObjByBranchName(name)
+    }
+
+
 //    fun searchById(name : String): LiveData<List<Branch>>{
 //        return branchDao.searchById(name)
 //    }

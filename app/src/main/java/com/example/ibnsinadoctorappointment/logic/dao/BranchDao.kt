@@ -3,6 +3,7 @@ package com.example.ibnsinadoctorappointment.logic.dao
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.ibnsinadoctorappointment.data.models.Branch
+import com.example.ibnsinadoctorappointment.data.models.DoctorChamberBook
 
 @Dao
 interface BranchDao {
@@ -22,6 +23,13 @@ interface BranchDao {
 
     @Query("DELETE FROM branch_table")
     suspend fun deleteAll()
+
+
+//    @Query("SELECT * FROM branch_table WHERE column_branchName = :name")
+//    fun getBranchObjByDoctorId(name: Int): DoctorChamberBook
+
+    @Query("SELECT * FROM branch_table WHERE column_branchName = :name")
+    fun getBranchObjByBranchName(name: String): Branch
 
 
 //    @Query("SELECT column_branchName FROM branch_table WHERE column_id LIKE :name")

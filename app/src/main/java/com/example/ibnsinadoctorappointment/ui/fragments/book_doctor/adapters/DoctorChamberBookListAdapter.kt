@@ -93,10 +93,12 @@ class DoctorChamberBookListAdapter :
 
         val bundle = Bundle()
         bundle.putString("fromWhere", "DoctorChamberBook")
-        bundle.putString("doctork_chamber_id", currentDoctorChamberBook.dbNo.toString())
+        bundle.putString("doctor_chamber_id", currentDoctorChamberBook.dbNo.toString())
+        bundle.putString("doctor_id", currentDoctorChamberBook.doctorId.toString())
+        bundle.putString("branch_id", currentDoctorChamberBook.branchNo)
         bundle.putString("days2TakeAppoint", currentDoctorChamberBook.days2TakeAppoint)
-        bundle.putString("doctork_name", currentDoctorChamberBook.nickName)
-        bundle.putString("doctork_qualification", currentDoctorChamberBook.qualification)
+        bundle.putString("doctor_name", currentDoctorChamberBook.nickName)
+        bundle.putString("doctor_qualification", currentDoctorChamberBook.qualification)
         bundle.putString("doctor_branch", currentDoctorChamberBook.branchName)
         bundle.putString("doctor_appointment_date", doctor_appointment_date)
 

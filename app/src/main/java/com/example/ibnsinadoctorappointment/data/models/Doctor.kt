@@ -14,10 +14,8 @@ data class Doctor(
     @ColumnInfo(name = "column_nickName")
     var nickName: String,
 
-
     @ColumnInfo(name = "column_avatarPath")
     var avatarPath: String,
-
 
     @ColumnInfo(name = "column_doctorDept")
     var doctorDept: String,
@@ -31,6 +29,8 @@ data class Doctor(
     @ColumnInfo(name = "column_designation")
     var designation: String,
 
+    @ColumnInfo(name = "column_averageTime")
+    var averageTime: String,
 
     @ColumnInfo(name = "column_doctorBranch")
     var doctorBranch: String

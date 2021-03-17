@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.ibnsinabranchappointment.logic.repository.BranchRepository
 import com.example.ibnsinadoctorappointment.data.database.MyDatabase
 import com.example.ibnsinadoctorappointment.data.models.Branch
+import com.example.ibnsinadoctorappointment.data.models.DoctorChamberBook
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -53,6 +54,15 @@ class BranchViewModel(application: Application) : AndroidViewModel(application) 
            repository.getAllBranches
         }
     }
+
+
+
+    fun getBranchObjByBranchName(name: String): Branch {
+        return repository.getBranchObjByBranchName(name)
+    }
+
+
+
 
 //    fun searchById(name: String): LiveData<List<Branch>> {
 //        return repository.searchById(name)
